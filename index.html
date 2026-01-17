@@ -99,117 +99,330 @@
             position: relative;
             overflow: hidden;
             padding: 2rem;
+            background: radial-gradient(circle at center, rgba(20, 20, 30, 1) 0%, #0a0a0a 100%);
         }
 
-        /* Lichtkegel-Effekt im Hintergrund - Imposante Lichtinstallation */
+        /* Dynamischer Lichthintergrund - komplette Füllung */
+        .light-background {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        /* LICHTKEGEL - Klassisch von oben */
         .light-cone {
             position: absolute;
-            width: 250px;
-            height: 700px;
-            filter: blur(30px);
-            animation: float 8s ease-in-out infinite;
-            opacity: 0.8;
+            filter: blur(25px);
+            animation: float 6s ease-in-out infinite;
         }
 
-        /* Neongrüne Lichtkegel */
+        /* Grelle Neongrüne Lichtkegel */
         .light-cone:nth-child(1) {
-            top: -250px;
-            left: 5%;
+            top: -300px;
+            left: 2%;
+            width: 280px;
+            height: 800px;
             background: radial-gradient(ellipse at top, 
-                rgba(0, 255, 150, 0.6) 0%,
-                rgba(0, 255, 150, 0.3) 40%,
-                transparent 75%);
+                rgba(0, 255, 100, 1) 0%,
+                rgba(0, 255, 100, 0.7) 25%,
+                rgba(0, 255, 100, 0.4) 50%,
+                transparent 80%);
             animation-delay: 0s;
         }
 
         .light-cone:nth-child(2) {
-            top: -250px;
-            left: 20%;
+            top: -300px;
+            left: 15%;
+            width: 220px;
+            height: 850px;
             background: radial-gradient(ellipse at top, 
-                rgba(0, 255, 150, 0.5) 0%,
-                rgba(0, 255, 150, 0.25) 40%,
-                transparent 75%);
-            animation-delay: 1.5s;
-            width: 200px;
+                rgba(50, 255, 150, 0.95) 0%,
+                rgba(50, 255, 150, 0.6) 30%,
+                rgba(50, 255, 150, 0.3) 55%,
+                transparent 80%);
+            animation-delay: 1s;
         }
 
-        /* Tiefblaue Lichtkegel */
+        /* Grelles Cyan/Türkis */
         .light-cone:nth-child(3) {
-            top: -250px;
-            left: 38%;
+            top: -300px;
+            left: 28%;
+            width: 260px;
+            height: 900px;
             background: radial-gradient(ellipse at top, 
-                rgba(0, 100, 255, 0.7) 0%,
-                rgba(0, 100, 255, 0.35) 40%,
-                transparent 75%);
-            animation-delay: 3s;
-            width: 280px;
+                rgba(0, 255, 255, 1) 0%,
+                rgba(0, 255, 255, 0.75) 25%,
+                rgba(0, 255, 255, 0.4) 50%,
+                transparent 80%);
+            animation-delay: 2.5s;
         }
 
+        /* Tiefes elektrisches Blau */
         .light-cone:nth-child(4) {
-            top: -250px;
-            left: 50%;
-            transform: translateX(-50%);
+            top: -300px;
+            left: 42%;
+            width: 300px;
+            height: 950px;
             background: radial-gradient(ellipse at top, 
-                rgba(0, 150, 255, 0.6) 0%,
-                rgba(0, 150, 255, 0.3) 40%,
-                transparent 75%);
+                rgba(0, 150, 255, 1) 0%,
+                rgba(0, 150, 255, 0.8) 25%,
+                rgba(0, 150, 255, 0.5) 50%,
+                transparent 80%);
+            animation-delay: 1.8s;
+        }
+
+        /* Grelles Magenta */
+        .light-cone:nth-child(5) {
+            top: -300px;
+            left: 56%;
+            width: 270px;
+            height: 880px;
+            background: radial-gradient(ellipse at top, 
+                rgba(255, 0, 200, 1) 0%,
+                rgba(255, 0, 200, 0.8) 25%,
+                rgba(255, 0, 200, 0.45) 50%,
+                transparent 80%);
+            animation-delay: 3.2s;
+        }
+
+        /* Knalliges Lila */
+        .light-cone:nth-child(6) {
+            top: -300px;
+            left: 70%;
+            width: 240px;
+            height: 820px;
+            background: radial-gradient(ellipse at top, 
+                rgba(180, 0, 255, 1) 0%,
+                rgba(180, 0, 255, 0.75) 25%,
+                rgba(180, 0, 255, 0.4) 50%,
+                transparent 80%);
+            animation-delay: 4s;
+        }
+
+        .light-cone:nth-child(7) {
+            top: -300px;
+            left: 82%;
+            width: 260px;
+            height: 870px;
+            background: radial-gradient(ellipse at top, 
+                rgba(255, 0, 255, 0.95) 0%,
+                rgba(255, 0, 255, 0.7) 25%,
+                rgba(255, 0, 255, 0.4) 50%,
+                transparent 80%);
             animation-delay: 2s;
         }
 
-        /* Grelles Lila/Magenta */
-        .light-cone:nth-child(5) {
-            top: -250px;
-            right: 25%;
-            background: radial-gradient(ellipse at top, 
-                rgba(200, 0, 255, 0.7) 0%,
-                rgba(200, 0, 255, 0.35) 40%,
-                transparent 75%);
-            animation-delay: 4s;
-            width: 260px;
-        }
-
-        .light-cone:nth-child(6) {
-            top: -250px;
-            right: 12%;
-            background: radial-gradient(ellipse at top, 
-                rgba(255, 0, 200, 0.6) 0%,
-                rgba(255, 0, 200, 0.3) 40%,
-                transparent 75%);
-            animation-delay: 5.5s;
-            width: 220px;
-        }
-
-        /* Zusätzliche Akzentkegel */
-        .light-cone:nth-child(7) {
-            top: -250px;
-            right: 5%;
-            background: radial-gradient(ellipse at top, 
-                rgba(0, 255, 200, 0.5) 0%,
-                rgba(0, 255, 200, 0.25) 40%,
-                transparent 75%);
-            animation-delay: 6.5s;
-            width: 190px;
-        }
-
         .light-cone:nth-child(8) {
-            top: -250px;
-            left: 65%;
+            top: -300px;
+            right: 2%;
+            width: 230px;
+            height: 840px;
             background: radial-gradient(ellipse at top, 
-                rgba(100, 0, 255, 0.6) 0%,
-                rgba(100, 0, 255, 0.3) 40%,
-                transparent 75%);
-            animation-delay: 7s;
-            width: 240px;
+                rgba(100, 255, 255, 0.9) 0%,
+                rgba(100, 255, 255, 0.65) 30%,
+                rgba(100, 255, 255, 0.35) 55%,
+                transparent 80%);
+            animation-delay: 5s;
         }
 
+        /* SPOTLIGHT-KREISE - Am Boden */
+        .spotlight {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .spotlight:nth-child(9) {
+            bottom: -150px;
+            left: 10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, 
+                rgba(0, 255, 100, 0.6) 0%,
+                rgba(0, 255, 100, 0.3) 40%,
+                transparent 70%);
+            animation-delay: 0.5s;
+        }
+
+        .spotlight:nth-child(10) {
+            bottom: -100px;
+            left: 35%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, 
+                rgba(255, 0, 200, 0.7) 0%,
+                rgba(255, 0, 200, 0.35) 40%,
+                transparent 70%);
+            animation-delay: 1.5s;
+        }
+
+        .spotlight:nth-child(11) {
+            bottom: -120px;
+            right: 15%;
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, 
+                rgba(0, 200, 255, 0.65) 0%,
+                rgba(0, 200, 255, 0.3) 40%,
+                transparent 70%);
+            animation-delay: 2.2s;
+        }
+
+        /* LASER-STRAHLEN - Diagonal */
+        .laser {
+            position: absolute;
+            width: 3px;
+            height: 120%;
+            filter: blur(8px);
+            opacity: 0;
+            animation: laserSweep 8s ease-in-out infinite;
+        }
+
+        .laser:nth-child(12) {
+            top: -10%;
+            left: 20%;
+            background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(0, 255, 150, 0.8) 20%,
+                rgba(0, 255, 150, 0.9) 50%,
+                rgba(0, 255, 150, 0.8) 80%,
+                transparent 100%);
+            transform: rotate(15deg);
+            animation-delay: 1s;
+        }
+
+        .laser:nth-child(13) {
+            top: -10%;
+            right: 25%;
+            background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(255, 0, 200, 0.8) 20%,
+                rgba(255, 0, 200, 0.9) 50%,
+                rgba(255, 0, 200, 0.8) 80%,
+                transparent 100%);
+            transform: rotate(-12deg);
+            animation-delay: 3s;
+        }
+
+        .laser:nth-child(14) {
+            top: -10%;
+            left: 50%;
+            background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(0, 200, 255, 0.8) 20%,
+                rgba(0, 200, 255, 0.9) 50%,
+                rgba(0, 200, 255, 0.8) 80%,
+                transparent 100%);
+            transform: rotate(8deg);
+            animation-delay: 5s;
+        }
+
+        /* PARTIKEL/LICHTPUNKTE - Schwebend */
+        .light-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            filter: blur(2px);
+            animation: particleFloat 10s ease-in-out infinite;
+        }
+
+        .light-particle:nth-child(15) {
+            top: 30%;
+            left: 15%;
+            box-shadow: 0 0 20px rgba(0, 255, 100, 1);
+            animation-delay: 0s;
+        }
+
+        .light-particle:nth-child(16) {
+            top: 45%;
+            left: 75%;
+            box-shadow: 0 0 20px rgba(255, 0, 200, 1);
+            animation-delay: 2s;
+        }
+
+        .light-particle:nth-child(17) {
+            top: 60%;
+            left: 40%;
+            box-shadow: 0 0 20px rgba(0, 200, 255, 1);
+            animation-delay: 4s;
+        }
+
+        .light-particle:nth-child(18) {
+            top: 25%;
+            right: 20%;
+            box-shadow: 0 0 20px rgba(180, 0, 255, 1);
+            animation-delay: 6s;
+        }
+
+        /* ANIMATIONEN */
         @keyframes float {
             0%, 100% { 
-                transform: translateY(0) rotate(3deg); 
-                opacity: 0.8;
+                transform: translateY(0) rotate(2deg) scaleY(1); 
             }
             50% { 
-                transform: translateY(40px) rotate(-3deg); 
+                transform: translateY(60px) rotate(-2deg) scaleY(1.05); 
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% { 
+                transform: scale(1.15);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes laserSweep {
+            0%, 100% {
+                opacity: 0;
+                transform: rotate(15deg) translateX(-100px);
+            }
+            10%, 40% {
+                opacity: 0.7;
+            }
+            20%, 30% {
                 opacity: 1;
+            }
+            50% {
+                opacity: 0;
+                transform: rotate(15deg) translateX(100px);
+            }
+        }
+
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translate(0, 0);
+                opacity: 0.3;
+            }
+            25% {
+                transform: translate(30px, -40px);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(-20px, -80px);
+                opacity: 0.6;
+            }
+            75% {
+                transform: translate(40px, -60px);
+                opacity: 0.9;
+            }
+        }
+
+        /* Parallax-Effekt bei Scroll */
+        @keyframes parallaxFade {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(100px);
             }
         }
 
@@ -571,15 +784,34 @@
 
     <!-- ==================== HERO SECTION ==================== -->
     <section id="home" class="hero">
-        <!-- Imposante Lichtkegel-Installation -->
-        <div class="light-cone"></div>
-        <div class="light-cone"></div>
-        <div class="light-cone"></div>
-        <div class="light-cone"></div>
-        <div class="light-cone"></div>
-        <div class="light-cone"></div>
-        <div class="light-cone"></div>
-        <div class="light-cone"></div>
+        <!-- Komplette Lichtinstallation -->
+        <div class="light-background">
+            <!-- Lichtkegel von oben (8 Stück) -->
+            <div class="light-cone"></div>
+            <div class="light-cone"></div>
+            <div class="light-cone"></div>
+            <div class="light-cone"></div>
+            <div class="light-cone"></div>
+            <div class="light-cone"></div>
+            <div class="light-cone"></div>
+            <div class="light-cone"></div>
+            
+            <!-- Spotlight-Kreise am Boden (3 Stück) -->
+            <div class="spotlight"></div>
+            <div class="spotlight"></div>
+            <div class="spotlight"></div>
+            
+            <!-- Laser-Strahlen diagonal (3 Stück) -->
+            <div class="laser"></div>
+            <div class="laser"></div>
+            <div class="laser"></div>
+            
+            <!-- Schwebende Lichtpartikel (4 Stück) -->
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+        </div>
 
         <div class="hero-content">
             <h1>MAX AKUSTIK</h1>
@@ -878,13 +1110,72 @@
             });
         });
 
-        // Navigation Hintergrund bei Scrollen
+        // Navigation Hintergrund bei Scrollen + PARALLAX-EFFEKT
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
+            const hero = document.querySelector('.hero');
+            const lightBackground = document.querySelector('.light-background');
+            const heroContent = document.querySelector('.hero-content');
+            const scrolled = window.scrollY;
+            
+            // Navigation Hintergrund
+            if (scrolled > 100) {
                 nav.style.background = 'rgba(10, 10, 10, 0.98)';
             } else {
                 nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+            
+            // Parallax-Effekt für Lichter beim Scrollen
+            if (scrolled < window.innerHeight) {
+                const opacity = 1 - (scrolled / window.innerHeight) * 1.2;
+                const translateY = scrolled * 0.5;
+                
+                if (lightBackground) {
+                    lightBackground.style.opacity = Math.max(0, opacity);
+                    lightBackground.style.transform = `translateY(${translateY}px)`;
+                }
+                
+                // Hero-Content bewegt sich langsamer (klassischer Parallax)
+                if (heroContent) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    heroContent.style.opacity = Math.max(0, 1 - (scrolled / window.innerHeight) * 0.8);
+                }
+            }
+        });
+
+        // Dynamische Licht-Intensität basierend auf Mausposition
+        document.addEventListener('mousemove', (e) => {
+            const hero = document.querySelector('.hero');
+            if (!hero) return;
+            
+            const heroRect = hero.getBoundingClientRect();
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            
+            // Nur wenn Maus über Hero-Bereich
+            if (mouseY < heroRect.bottom && mouseY > heroRect.top) {
+                const lightCones = document.querySelectorAll('.light-cone');
+                const spotlights = document.querySelectorAll('.spotlight');
+                
+                lightCones.forEach((cone, index) => {
+                    const coneRect = cone.getBoundingClientRect();
+                    const coneCenterX = coneRect.left + coneRect.width / 2;
+                    const distance = Math.abs(mouseX - coneCenterX);
+                    const maxDistance = window.innerWidth / 2;
+                    const intensity = 1 - Math.min(distance / maxDistance, 0.5);
+                    
+                    cone.style.opacity = 0.7 + (intensity * 0.3);
+                });
+                
+                spotlights.forEach((spot) => {
+                    const spotRect = spot.getBoundingClientRect();
+                    const spotCenterX = spotRect.left + spotRect.width / 2;
+                    const distance = Math.abs(mouseX - spotCenterX);
+                    const maxDistance = window.innerWidth / 2;
+                    const intensity = 1 - Math.min(distance / maxDistance, 0.5);
+                    
+                    spot.style.opacity = 0.4 + (intensity * 0.4);
+                });
             }
         });
 
@@ -920,4 +1211,23 @@
                     entry.target.classList.add('fade-in');
                 }
             });
-        }, observerOption
+        }, observerOptions);
+
+        // Beobachte alle Cards und Elemente
+        document.querySelectorAll('.leistung-card, .galerie-item, .equipment-kategorie').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Extra: Licht-Intensität erhöhen wenn Seite geladen wird
+        window.addEventListener('load', () => {
+            const lightBackground = document.querySelector('.light-background');
+            if (lightBackground) {
+                lightBackground.style.transition = 'opacity 2s ease-in';
+                setTimeout(() => {
+                    lightBackground.style.opacity = '1';
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>
