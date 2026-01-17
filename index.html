@@ -16,9 +16,36 @@
             /* FARBSCHEMA - Hier können Sie die Farben anpassen */
             --schwarz: #0a0a0a;
             --weiss: #f5f5f5;
-            --akzent-gelb: #ffd700;
-            --akzent-blau: #4a9eff;
             --grau: #888;
+            
+            /* ============================================
+               AKZENTFARBE - HIER EINFACH ÄNDERN!
+               Kommentieren Sie die gewünschte Farbe EIN (entfernen Sie //)
+               und die anderen AUS (fügen Sie // davor)
+               ============================================ */
+            
+            /* Option 1: Neonblau (AKTIV) */
+            --akzent-haupt: #00d9ff;
+            --akzent-glow: rgba(0, 217, 255, 0.6);
+            
+            /* Option 2: Edles Violett */
+            /* --akzent-haupt: #9d4edd;
+            --akzent-glow: rgba(157, 78, 221, 0.6); */
+            
+            /* Option 3: Knalliges Magenta */
+            /* --akzent-haupt: #ff006e;
+            --akzent-glow: rgba(255, 0, 110, 0.6); */
+            
+            /* Option 4: Elektrisches Türkis */
+            /* --akzent-haupt: #06ffa5;
+            --akzent-glow: rgba(6, 255, 165, 0.6); */
+            
+            /* Option 5: Warmes Orange */
+            /* --akzent-haupt: #ff6b35;
+            --akzent-glow: rgba(255, 107, 53, 0.6); */
+            
+            /* Sekundärakzent für Lichter (wird automatisch angepasst) */
+            --akzent-blau: #4a9eff;
             
             /* SCHRIFTGRÖSSEN */
             --text-klein: 0.9rem;
@@ -66,7 +93,7 @@
         }
 
         nav a:hover {
-            color: var(--akzent-gelb);
+            color: var(--akzent-haupt);
         }
 
         nav a::after {
@@ -76,7 +103,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--akzent-gelb);
+            background: var(--akzent-haupt);
             transition: width 0.3s ease;
         }
 
@@ -88,6 +115,42 @@
             font-weight: bold;
             font-size: 1.3rem;
             letter-spacing: 2px;
+        }
+
+        /* Hamburger-Menü für Mobile */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--weiss);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+            background: var(--akzent-haupt);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+            background: var(--akzent-haupt);
         }
 
         /* ==================== HERO SECTION ==================== */
@@ -119,7 +182,7 @@
         /* Grelle Neongrüne Lichtkegel */
         .light-cone:nth-child(1) {
             top: -300px;
-            left: 2%;
+            left: -5%;
             width: 280px;
             height: 800px;
             background: radial-gradient(ellipse at top, 
@@ -132,7 +195,7 @@
 
         .light-cone:nth-child(2) {
             top: -300px;
-            left: 15%;
+            left: 10%;
             width: 220px;
             height: 850px;
             background: radial-gradient(ellipse at top, 
@@ -146,7 +209,7 @@
         /* Grelles Cyan/Türkis */
         .light-cone:nth-child(3) {
             top: -300px;
-            left: 28%;
+            left: 23%;
             width: 260px;
             height: 900px;
             background: radial-gradient(ellipse at top, 
@@ -160,7 +223,7 @@
         /* Tiefes elektrisches Blau */
         .light-cone:nth-child(4) {
             top: -300px;
-            left: 42%;
+            left: 37%;
             width: 300px;
             height: 950px;
             background: radial-gradient(ellipse at top, 
@@ -174,7 +237,7 @@
         /* Grelles Magenta */
         .light-cone:nth-child(5) {
             top: -300px;
-            left: 56%;
+            left: 51%;
             width: 270px;
             height: 880px;
             background: radial-gradient(ellipse at top, 
@@ -188,7 +251,7 @@
         /* Knalliges Lila */
         .light-cone:nth-child(6) {
             top: -300px;
-            left: 70%;
+            left: 65%;
             width: 240px;
             height: 820px;
             background: radial-gradient(ellipse at top, 
@@ -201,7 +264,7 @@
 
         .light-cone:nth-child(7) {
             top: -300px;
-            left: 82%;
+            left: 78%;
             width: 260px;
             height: 870px;
             background: radial-gradient(ellipse at top, 
@@ -214,8 +277,8 @@
 
         .light-cone:nth-child(8) {
             top: -300px;
-            right: 2%;
-            width: 230px;
+            left: 92%;
+            width: 280px;
             height: 840px;
             background: radial-gradient(ellipse at top, 
                 rgba(100, 255, 255, 0.9) 0%,
@@ -435,23 +498,64 @@
 
         .hero h1 {
             font-size: var(--text-hero);
-            margin-bottom: 1rem;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
-            animation: fadeInUp 1s ease;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-shadow: 
+                0 0 40px var(--akzent-glow),
+                0 0 80px var(--akzent-glow),
+                0 0 120px var(--akzent-glow),
+                0 5px 20px rgba(0, 0, 0, 0.8);
+            animation: fadeInUp 1s ease, textGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { 
+                text-shadow: 
+                    0 0 40px var(--akzent-glow),
+                    0 0 80px var(--akzent-glow),
+                    0 0 120px var(--akzent-glow),
+                    0 5px 20px rgba(0, 0, 0, 0.8);
+            }
+            50% { 
+                text-shadow: 
+                    0 0 60px var(--akzent-glow),
+                    0 0 100px var(--akzent-glow),
+                    0 0 150px var(--akzent-glow),
+                    0 5px 25px rgba(0, 0, 0, 0.8);
+            }
         }
 
         .hero .subtitle {
-            font-size: var(--text-gross);
-            color: var(--grau);
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.2s backwards;
+            font-size: 2rem;
+            color: var(--weiss);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--akzent-haupt), var(--weiss), var(--akzent-haupt));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease 0.2s backwards, gradientShift 4s ease infinite;
+            filter: drop-shadow(0 0 20px var(--akzent-glow));
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
         }
 
         .hero p {
-            font-size: var(--text-normal);
+            font-size: 1.2rem;
             margin-bottom: 2.5rem;
-            line-height: 1.8;
+            line-height: 2;
             animation: fadeInUp 1s ease 0.4s backwards;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @keyframes fadeInUp {
@@ -467,19 +571,61 @@
 
         .cta-button {
             display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--akzent-gelb);
-            color: var(--schwarz);
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--akzent-haupt), var(--akzent-blau));
+            color: var(--weiss);
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            text-transform: uppercase;
             transition: all 0.3s ease;
-            animation: fadeInUp 1s ease 0.6s backwards;
+            animation: fadeInUp 1s ease 0.6s backwards, buttonPulse 2s ease-in-out infinite;
+            box-shadow: 
+                0 10px 40px var(--akzent-glow),
+                0 0 20px var(--akzent-glow),
+                inset 0 0 20px rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 15px 50px var(--akzent-glow),
+                0 0 30px var(--akzent-glow),
+                inset 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% {
+                box-shadow: 
+                    0 10px 40px var(--akzent-glow),
+                    0 0 20px var(--akzent-glow),
+                    inset 0 0 20px rgba(255, 255, 255, 0.2);
+            }
+            50% {
+                box-shadow: 
+                    0 15px 50px var(--akzent-glow),
+                    0 0 30px var(--akzent-glow),
+                    inset 0 0 30px rgba(255, 255, 255, 0.3);
+            }
         }
 
         /* ==================== SECTION GEMEINSAM ==================== */
@@ -501,7 +647,7 @@
             display: block;
             width: 100px;
             height: 3px;
-            background: var(--akzent-gelb);
+            background: var(--akzent-haupt);
             margin: 1rem auto 0;
         }
 
@@ -524,13 +670,13 @@
         .leistung-card:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.08);
-            border-color: var(--akzent-gelb);
+            border-color: var(--akzent-haupt);
         }
 
         .leistung-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--akzent-gelb);
+            color: var(--akzent-haupt);
         }
 
         .leistung-card ul {
@@ -540,7 +686,7 @@
 
         .leistung-card li::before {
             content: '▸ ';
-            color: var(--akzent-gelb);
+            color: var(--akzent-haupt);
             font-weight: bold;
         }
 
@@ -564,7 +710,7 @@
         }
 
         .galerie-item:hover {
-            border-color: var(--akzent-gelb);
+            border-color: var(--akzent-haupt);
             transform: scale(1.02);
         }
 
@@ -595,7 +741,7 @@
         }
 
         .galerie-overlay h4 {
-            color: var(--akzent-gelb);
+            color: var(--akzent-haupt);
             margin-bottom: 0.5rem;
         }
 
@@ -608,7 +754,7 @@
         }
 
         .about-text h3 {
-            color: var(--akzent-gelb);
+            color: var(--akzent-haupt);
             margin-bottom: 1rem;
         }
 
@@ -637,11 +783,11 @@
             background: rgba(255, 255, 255, 0.05);
             padding: 2rem;
             border-radius: 10px;
-            border-left: 4px solid var(--akzent-gelb);
+            border-left: 4px solid var(--akzent-haupt);
         }
 
         .equipment-kategorie h3 {
-            color: var(--akzent-gelb);
+            color: var(--akzent-haupt);
             margin-bottom: 1rem;
         }
 
@@ -675,7 +821,7 @@
         }
 
         .kontakt-item h3 {
-            color: var(--akzent-gelb);
+            color: var(--akzent-haupt);
             margin-bottom: 1rem;
         }
 
@@ -698,7 +844,7 @@
         .kontakt-form input:focus,
         .kontakt-form textarea:focus {
             outline: none;
-            border-color: var(--akzent-gelb);
+            border-color: var(--akzent-haupt);
         }
 
         .kontakt-form textarea {
@@ -708,7 +854,7 @@
 
         .kontakt-form button {
             padding: 1rem 2rem;
-            background: var(--akzent-gelb);
+            background: var(--akzent-haupt);
             color: var(--schwarz);
             border: none;
             border-radius: 5px;
@@ -731,7 +877,7 @@
         }
 
         footer a {
-            color: var(--akzent-gelb);
+            color: var(--akzent-haupt);
             text-decoration: none;
         }
 
@@ -746,16 +892,89 @@
                 --text-gross: 1.5rem;
             }
 
-            nav ul {
-                gap: 1rem;
+            /* Mobile Navigation */
+            .hamburger {
+                display: flex;
             }
 
+            nav {
+                padding: 0.8rem 0;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 60px);
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                overflow-y: auto;
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            nav ul li:first-child {
+                display: none; /* Logo verstecken in Mobile-Menü */
+            }
+
+            nav a {
+                font-size: 1.3rem;
+            }
+
+            .logo {
+                position: absolute;
+                left: 2rem;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 1.1rem;
+            }
+
+            /* Hero Anpassungen */
             .about-content {
                 grid-template-columns: 1fr;
             }
 
             .hero h1 {
                 font-size: 2rem;
+                letter-spacing: 4px;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            /* Lichter für Mobile optimieren */
+            .light-cone {
+                width: 150px !important;
+            }
+
+            .spotlight {
+                width: 250px !important;
+                height: 250px !important;
             }
         }
 
@@ -772,13 +991,19 @@
 <body>
     <!-- ==================== NAVIGATION ==================== -->
     <nav>
-        <ul>
-            <li><a href="#home" class="logo">MAX AKUSTIK</a></li>
-            <li><a href="#leistungen">Leistungen</a></li>
-            <li><a href="#projekte">Projekte</a></li>
-            <li><a href="#ueber">Über mich</a></li>
-            <li><a href="#equipment">Equipment</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
+        <a href="#home" class="logo">MAX AKUSTIK</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="#home" onclick="closeMenu()">Home</a></li>
+            <li><a href="#leistungen" onclick="closeMenu()">Leistungen</a></li>
+            <li><a href="#projekte" onclick="closeMenu()">Projekte</a></li>
+            <li><a href="#ueber" onclick="closeMenu()">Über mich</a></li>
+            <li><a href="#equipment" onclick="closeMenu()">Equipment</a></li>
+            <li><a href="#kontakt" onclick="closeMenu()">Kontakt</a></li>
         </ul>
     </nav>
 
@@ -1096,6 +1321,21 @@
 
     <!-- ==================== JAVASCRIPT ==================== -->
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // ==================== HAMBURGER-MENÜ ====================
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+
         // Smooth Scrolling für Navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
