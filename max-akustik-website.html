@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Akustik - Veranstaltungstechnik mit Leidenschaft</title>
+    <style>
+        /* ==================== GLOBALE EINSTELLUNGEN ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* FARBSCHEMA - Hier können Sie die Farben anpassen */
+            --schwarz: #0a0a0a;
+            --weiss: #f5f5f5;
+            --akzent-gelb: #ffd700;
+            --akzent-blau: #4a9eff;
+            --grau: #888;
+            
+            /* SCHRIFTGRÖSSEN */
+            --text-klein: 0.9rem;
+            --text-normal: 1.1rem;
+            --text-gross: 1.8rem;
+            --text-hero: 3.5rem;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--schwarz);
+            color: var(--weiss);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            color: var(--weiss);
+            text-decoration: none;
+            font-size: var(--text-normal);
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--akzent-gelb);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--akzent-gelb);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        /* Lichtkegel-Effekt im Hintergrund */
+        .light-cone {
+            position: absolute;
+            width: 300px;
+            height: 600px;
+            background: radial-gradient(ellipse at top, 
+                rgba(255, 215, 0, 0.3) 0%,
+                rgba(255, 215, 0, 0.1) 30%,
+                transparent 70%);
+            filter: blur(40px);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .light-cone:nth-child(1) {
+            top: -200px;
+            left: 10%;
+        }
+
+        .light-cone:nth-child(2) {
+            top: -200px;
+            right: 15%;
+            animation-delay: 2s;
+            background: radial-gradient(ellipse at top, 
+                rgba(74, 158, 255, 0.3) 0%,
+                rgba(74, 158, 255, 0.1) 30%,
+                transparent 70%);
+        }
+
+        .light-cone:nth-child(3) {
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(5deg); }
+            50% { transform: translateY(30px) rotate(-5deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: var(--text-hero);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: var(--text-gross);
+            color: var(--grau);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero p {
+            font-size: var(--text-normal);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--akzent-gelb);
+            color: var(--schwarz);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+
+        /* ==================== SECTION GEMEINSAM ==================== */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: var(--text-hero);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--akzent-gelb);
+            margin: 1rem auto 0;
+        }
+
+        /* ==================== LEISTUNGEN ==================== */
+        .leistungen-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .leistung-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .leistung-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--akzent-gelb);
+        }
+
+        .leistung-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--akzent-gelb);
+        }
+
+        .leistung-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .leistung-card li::before {
+            content: '▸ ';
+            color: var(--akzent-gelb);
+            font-weight: bold;
+        }
+
+        /* ==================== PROJEKTE / GALERIE ==================== */
+        .galerie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .galerie-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 4/3;
+            background: rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .galerie-item:hover {
+            border-color: var(--akzent-gelb);
+            transform: scale(1.02);
+        }
+
+        /* Platzhalter für Bilder - HIER EIGENE BILDER EINFÜGEN */
+        .galerie-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 215, 0, 0.2), 
+                rgba(74, 158, 255, 0.2));
+            opacity: 0.3;
+        }
+
+        .galerie-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .galerie-item:hover .galerie-overlay {
+            transform: translateY(0);
+        }
+
+        .galerie-overlay h4 {
+            color: var(--akzent-gelb);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ==================== ÜBER MICH ==================== */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--akzent-gelb);
+            margin-bottom: 1rem;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, 
+                rgba(255, 215, 0, 0.2), 
+                rgba(74, 158, 255, 0.2));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        /* ==================== EQUIPMENT ==================== */
+        .equipment-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .equipment-kategorie {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--akzent-gelb);
+        }
+
+        .equipment-kategorie h3 {
+            color: var(--akzent-gelb);
+            margin-bottom: 1rem;
+        }
+
+        .equipment-kategorie ul {
+            list-style: none;
+        }
+
+        .equipment-kategorie li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ==================== KONTAKT ==================== */
+        .kontakt-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .kontakt-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .kontakt-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .kontakt-item h3 {
+            color: var(--akzent-gelb);
+            margin-bottom: 1rem;
+        }
+
+        .kontakt-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .kontakt-form input,
+        .kontakt-form textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: var(--weiss);
+            font-family: inherit;
+        }
+
+        .kontakt-form input:focus,
+        .kontakt-form textarea:focus {
+            outline: none;
+            border-color: var(--akzent-gelb);
+        }
+
+        .kontakt-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .kontakt-form button {
+            padding: 1rem 2rem;
+            background: var(--akzent-gelb);
+            color: var(--schwarz);
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .kontakt-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer a {
+            color: var(--akzent-gelb);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            :root {
+                --text-hero: 2.5rem;
+                --text-gross: 1.5rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* ==================== UTILITY KLASSEN ==================== */
+        .hidden {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav>
+        <ul>
+            <li><a href="#home" class="logo">MAX AKUSTIK</a></li>
+            <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#projekte">Projekte</a></li>
+            <li><a href="#ueber">Über mich</a></li>
+            <li><a href="#equipment">Equipment</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="home" class="hero">
+        <!-- Lichtkegel-Effekte -->
+        <div class="light-cone"></div>
+        <div class="light-cone"></div>
+        <div class="light-cone"></div>
+
+        <div class="hero-content">
+            <h1>MAX AKUSTIK</h1>
+            <p class="subtitle">Veranstaltungstechnik mit Leidenschaft</p>
+            <p>
+                Perfekte Klangkulissen und professionelle Lichttechnik für Ihre Events. 
+                Von intimen Konzerten bis zu großen Festivals – ich sorge dafür, 
+                dass Ihre Veranstaltung zum unvergesslichen Erlebnis wird.
+            </p>
+            <a href="#kontakt" class="cta-button">Jetzt Anfragen</a>
+        </div>
+    </section>
+
+    <!-- ==================== LEISTUNGEN ==================== -->
+    <section id="leistungen">
+        <h2>Meine Leistungen</h2>
+        <div class="leistungen-grid">
+            <!-- HIER können Sie Leistungen anpassen -->
+            <div class="leistung-card">
+                <h3>Tontechnik</h3>
+                <p>Professionelle PA-Systeme und Mischpulte für kristallklaren Sound</p>
+                <ul>
+                    <li>Live-Mixing</li>
+                    <li>PA-Beschallung</li>
+                    <li>Monitoring</li>
+                    <li>Akustikberatung</li>
+                </ul>
+            </div>
+
+            <div class="leistung-card">
+                <h3>Lichttechnik</h3>
+                <p>Atmosphärische Beleuchtung für jede Stimmung</p>
+                <ul>
+                    <li>Moving Heads</li>
+                    <li>LED-Technik</li>
+                    <li>Lichtdesign</li>
+                    <li>DMX-Steuerung</li>
+                </ul>
+            </div>
+
+            <div class="leistung-card">
+                <h3>Videotechnik</h3>
+                <p>Beamer, LED-Wände und Live-Übertragungen</p>
+                <ul>
+                    <li>Projektionen</li>
+                    <li>LED-Screens</li>
+                    <li>Kameratechnik</li>
+                    <li>Streaming</li>
+                </ul>
+            </div>
+
+            <div class="leistung-card">
+                <h3>Bühnen & Rigging</h3>
+                <p>Sicherer Auf- und Abbau Ihrer Bühne</p>
+                <ul>
+                    <li>Bühnenbau</li>
+                    <li>Traverse-Systeme</li>
+                    <li>Rigging</li>
+                    <li>Sicherheit</li>
+                </ul>
+            </div>
+
+            <div class="leistung-card">
+                <h3>Planung & Beratung</h3>
+                <p>Von der Konzeption bis zur Durchführung</p>
+                <ul>
+                    <li>Technische Planung</li>
+                    <li>Vor-Ort-Begehung</li>
+                    <li>Budgetberatung</li>
+                    <li>Projektmanagement</li>
+                </ul>
+            </div>
+
+            <div class="leistung-card">
+                <h3>Support & Service</h3>
+                <p>Zuverlässige Betreuung während Ihrer Veranstaltung</p>
+                <ul>
+                    <li>Techniker vor Ort</li>
+                    <li>24/7 Notfallservice</li>
+                    <li>Wartung</li>
+                    <li>Backup-Equipment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJEKTE / REFERENZEN ==================== -->
+    <section id="projekte">
+        <h2>Referenzen & Projekte</h2>
+        <div class="galerie-grid">
+            <!-- HIER können Sie eigene Projektbilder einfügen -->
+            <!-- Ersetzen Sie die Platzhalter mit <img src="ihr-bild.jpg" alt="Beschreibung"> -->
+            
+            <div class="galerie-item">
+                <div class="galerie-overlay">
+                    <h4>Stadtfest 2024</h4>
+                    <p>Hauptbühne mit Vollbeschallung für 5.000 Besucher</p>
+                </div>
+            </div>
+
+            <div class="galerie-item">
+                <div class="galerie-overlay">
+                    <h4>Rock-Konzert</h4>
+                    <p>Komplette Ton- und Lichttechnik</p>
+                </div>
+            </div>
+
+            <div class="galerie-item">
+                <div class="galerie-overlay">
+                    <h4>Firmenveranstaltung</h4>
+                    <p>Beschallung, Licht und Videotechnik</p>
+                </div>
+            </div>
+
+            <div class="galerie-item">
+                <div class="galerie-overlay">
+                    <h4>Festival-Bühne</h4>
+                    <p>Mehrtägiges Festival mit Rigging</p>
+                </div>
+            </div>
+
+            <div class="galerie-item">
+                <div class="galerie-overlay">
+                    <h4>Theater-Produktion</h4>
+                    <p>Lichtdesign und Sound-Engineering</p>
+                </div>
+            </div>
+
+            <div class="galerie-item">
+                <div class="galerie-overlay">
+                    <h4>Hochzeit</h4>
+                    <p>Diskrete Beschallung und Ambientebeleuchtung</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ÜBER MICH ==================== -->
+    <section id="ueber">
+        <h2>Über mich</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Max Akustik</h3>
+                <p>
+                    <!-- HIER können Sie Ihren persönlichen Text einfügen -->
+                    Mit über 15 Jahren Erfahrung in der Veranstaltungstechnik bringe ich 
+                    Leidenschaft und Professionalität in jedes Projekt. Was als Hobby in 
+                    kleinen Clubs begann, ist heute meine Berufung.
+                </p>
+                <p>
+                    Mein Anspruch: Perfekte Technik, die im Hintergrund funktioniert und 
+                    Ihre Veranstaltung zum Strahlen bringt. Dabei setze ich auf modernste 
+                    Technik, gepaart mit dem Know-how aus hunderten erfolgreichen Events.
+                </p>
+                <p>
+                    Von intimen Jazz-Konzerten bis zu Open-Air-Festivals – jede Veranstaltung 
+                    hat ihre eigenen Anforderungen. Gemeinsam finden wir die perfekte 
+                    technische Lösung für Ihr Event.
+                </p>
+            </div>
+            <div class="about-image">
+                <!-- HIER können Sie ein Foto einfügen: <img src="max-foto.jpg" alt="Max Akustik"> -->
+                🎵
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EQUIPMENT ==================== -->
+    <section id="equipment">
+        <h2>Technik & Equipment</h2>
+        <div class="equipment-list">
+            <!-- HIER können Sie Ihr Equipment anpassen -->
+            <div class="equipment-kategorie">
+                <h3>Beschallungsanlagen</h3>
+                <ul>
+                    <li>Line Array Systeme</li>
+                    <li>Aktiv-Lautsprecher</li>
+                    <li>Subwoofer</li>
+                    <li>Monitor-Systeme</li>
+                    <li>Delay-Türme</li>
+                </ul>
+            </div>
+
+            <div class="equipment-kategorie">
+                <h3>Mischpulte & Processing</h3>
+                <ul>
+                    <li>Digital-Konsolen</li>
+                    <li>Stage-Boxen</li>
+                    <li>Effektgeräte</li>
+                    <li>Equalizer & Kompressoren</li>
+                    <li>Funkstrecken</li>
+                </ul>
+            </div>
+
+            <div class="equipment-kategorie">
+                <h3>Lichttechnik</h3>
+                <ul>
+                    <li>Moving Heads</li>
+                    <li>LED-Pars & Bars</li>
+                    <li>Scheinwerfer</li>
+                    <li>Lichtsteuerpulte</li>
+                    <li>Nebelmaschinen</li>
+                </ul>
+            </div>
+
+            <div class="equipment-kategorie">
+                <h3>Bühne & Rigging</h3>
+                <ul>
+                    <li>Bühnenpodeste</li>
+                    <li>Traversen-Systeme</li>
+                    <li>Kettenzüge</li>
+                    <li>Bühnenvorhänge</li>
+                    <li>Absperrtechnik</li>
+                </ul>
+            </div>
+
+            <div class="equipment-kategorie">
+                <h3>Video & Projektion</h3>
+                <ul>
+                    <li>Hochleistungsbeamer</li>
+                    <li>LED-Wände</li>
+                    <li>Videomischer</li>
+                    <li>Kameras</li>
+                    <li>Leinwände</li>
+                </ul>
+            </div>
+
+            <div class="equipment-kategorie">
+                <h3>Stromversorgung</h3>
+                <ul>
+                    <li>Stromverteiler</li>
+                    <li>CEE-Kabel</li>
+                    <li>Generatoren</li>
+                    <li>Absicherung</li>
+                    <li>Multicore-Kabel</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== KONTAKT ==================== -->
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <div class="kontakt-container">
+            <div class="kontakt-info">
+                <div class="kontakt-item">
+                    <h3>📞 Telefon</h3>
+                    <!-- HIER Ihre Telefonnummer einfügen -->
+                    <p>+49 (0) 123 456789</p>
+                </div>
+                <div class="kontakt-item">
+                    <h3>✉️ E-Mail</h3>
+                    <!-- HIER Ihre E-Mail einfügen -->
+                    <p>info@max-akustik.de</p>
+                </div>
+                <div class="kontakt-item">
+                    <h3>📍 Standort</h3>
+                    <!-- HIER Ihren Standort einfügen -->
+                    <p>Musterstadt, Deutschland</p>
+                </div>
+            </div>
+
+            <form class="kontakt-form" onsubmit="return handleFormSubmit(event)">
+                <input type="text" name="name" placeholder="Ihr Name" required>
+                <input type="email" name="email" placeholder="Ihre E-Mail" required>
+                <input type="tel" name="telefon" placeholder="Telefon (optional)">
+                <input type="text" name="veranstaltung" placeholder="Art der Veranstaltung" required>
+                <textarea name="nachricht" placeholder="Ihre Nachricht / Details zur Veranstaltung" required></textarea>
+                <button type="submit">Anfrage senden</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <p>&copy; 2025 Max Akustik - Veranstaltungstechnik | Alle Rechte vorbehalten</p>
+        <p style="margin-top: 1rem;">
+            <a href="#impressum">Impressum</a> | 
+            <a href="#datenschutz">Datenschutz</a>
+        </p>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // Smooth Scrolling für Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navigation Hintergrund bei Scrollen
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+
+        // Formular-Handler
+        // WICHTIG: Ersetzen Sie diese Funktion mit Ihrer eigenen Backend-Logik
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Beispiel: Formular-Daten sammeln
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            console.log('Formular-Daten:', data);
+            
+            // HIER Ihre eigene Logik zum Versenden der Daten einfügen
+            // z.B. per fetch() an Ihr Backend oder E-Mail-Service
+            
+            alert('Vielen Dank für Ihre Anfrage! Ich melde mich schnellstmöglich bei Ihnen.');
+            event.target.reset();
+            
+            return false;
+        }
+
+        // Fade-in Effekt für Elemente beim Scrollen
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Beobachte alle Cards und Elemente
+        document.querySelectorAll('.leistung-card, .galerie-item, .equipment-kategorie').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
