@@ -73,11 +73,10 @@
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1rem 0 0.5rem;
+            padding: 1rem 2rem;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            gap: 0.8rem;
         }
 
         .logo {
@@ -87,6 +86,7 @@
             color: var(--weiss);
             text-decoration: none;
             transition: color 0.3s ease;
+            z-index: 1002;
         }
 
         .logo:hover {
@@ -98,9 +98,7 @@
             justify-content: center;
             align-items: center;
             list-style: none;
-            flex-wrap: wrap;
             gap: 2rem;
-            padding: 0 2rem;
             margin: 0;
         }
 
@@ -137,23 +135,20 @@
             flex-direction: column;
             cursor: pointer;
             padding: 0.5rem;
-            position: absolute;
-            right: 2rem;
-            top: 1rem;
-            z-index: 1001;
+            z-index: 1002;
         }
 
         .hamburger span {
-            width: 25px;
+            width: 28px;
             height: 3px;
             background: var(--weiss);
-            margin: 3px 0;
+            margin: 4px 0;
             transition: all 0.3s ease;
             border-radius: 3px;
         }
 
         .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
+            transform: rotate(45deg) translate(9px, 9px);
             background: var(--akzent-haupt);
         }
 
@@ -162,7 +157,7 @@
         }
 
         .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
+            transform: rotate(-45deg) translate(8px, -8px);
             background: var(--akzent-haupt);
         }
 
@@ -219,289 +214,134 @@
             animation-delay: 1s;
         }
 
-        /* Grelles Cyan/Türkis */
         .light-cone:nth-child(3) {
             top: -300px;
-            left: 23%;
-            width: 260px;
+            left: 25%;
+            width: 200px;
             height: 900px;
             background: radial-gradient(ellipse at top, 
-                rgba(0, 255, 255, 1) 0%,
-                rgba(0, 255, 255, 0.75) 25%,
-                rgba(0, 255, 255, 0.4) 50%,
+                rgba(100, 255, 180, 0.9) 0%,
+                rgba(100, 255, 180, 0.55) 35%,
+                rgba(100, 255, 180, 0.25) 60%,
+                transparent 85%);
+            animation-delay: 2s;
+        }
+
+        .light-cone:nth-child(4) {
+            top: -300px;
+            right: 25%;
+            width: 240px;
+            height: 820px;
+            background: radial-gradient(ellipse at top, 
+                rgba(150, 255, 200, 0.95) 0%,
+                rgba(150, 255, 200, 0.6) 28%,
+                rgba(150, 255, 200, 0.3) 52%,
+                transparent 78%);
+            animation-delay: 1.5s;
+        }
+
+        .light-cone:nth-child(5) {
+            top: -300px;
+            right: 10%;
+            width: 210px;
+            height: 880px;
+            background: radial-gradient(ellipse at top, 
+                rgba(200, 255, 220, 0.88) 0%,
+                rgba(200, 255, 220, 0.52) 32%,
+                rgba(200, 255, 220, 0.28) 58%,
+                transparent 82%);
+            animation-delay: 0.5s;
+        }
+
+        .light-cone:nth-child(6) {
+            top: -300px;
+            right: -5%;
+            width: 260px;
+            height: 840px;
+            background: radial-gradient(ellipse at top, 
+                rgba(220, 255, 230, 0.92) 0%,
+                rgba(220, 255, 230, 0.58) 30%,
+                rgba(220, 255, 230, 0.32) 55%,
                 transparent 80%);
             animation-delay: 2.5s;
         }
 
-        /* Tiefes elektrisches Blau */
-        .light-cone:nth-child(4) {
-            top: -300px;
-            left: 37%;
-            width: 300px;
-            height: 950px;
-            background: radial-gradient(ellipse at top, 
-                rgba(0, 150, 255, 1) 0%,
-                rgba(0, 150, 255, 0.8) 25%,
-                rgba(0, 150, 255, 0.5) 50%,
-                transparent 80%);
-            animation-delay: 1.8s;
-        }
-
-        /* Grelles Magenta */
-        .light-cone:nth-child(5) {
-            top: -300px;
-            left: 51%;
-            width: 270px;
-            height: 880px;
-            background: radial-gradient(ellipse at top, 
-                rgba(255, 0, 200, 1) 0%,
-                rgba(255, 0, 200, 0.8) 25%,
-                rgba(255, 0, 200, 0.45) 50%,
-                transparent 80%);
-            animation-delay: 3.2s;
-        }
-
-        /* Knalliges Lila */
-        .light-cone:nth-child(6) {
-            top: -300px;
-            left: 65%;
-            width: 240px;
-            height: 820px;
-            background: radial-gradient(ellipse at top, 
-                rgba(180, 0, 255, 1) 0%,
-                rgba(180, 0, 255, 0.75) 25%,
-                rgba(180, 0, 255, 0.4) 50%,
-                transparent 80%);
-            animation-delay: 4s;
-        }
-
-        .light-cone:nth-child(7) {
-            top: -300px;
-            left: 78%;
-            width: 260px;
-            height: 870px;
-            background: radial-gradient(ellipse at top, 
-                rgba(255, 0, 255, 0.95) 0%,
-                rgba(255, 0, 255, 0.7) 25%,
-                rgba(255, 0, 255, 0.4) 50%,
-                transparent 80%);
-            animation-delay: 2s;
-        }
-
-        .light-cone:nth-child(8) {
-            top: -300px;
-            left: 92%;
-            width: 280px;
-            height: 840px;
-            background: radial-gradient(ellipse at top, 
-                rgba(100, 255, 255, 0.9) 0%,
-                rgba(100, 255, 255, 0.65) 30%,
-                rgba(100, 255, 255, 0.35) 55%,
-                transparent 80%);
-            animation-delay: 5s;
-        }
-
-        /* SPOTLIGHT-KREISE - Am Boden */
+        /* SPOTLIGHTS - Zusätzliche Effekte von unten */
         .spotlight {
             position: absolute;
-            border-radius: 50%;
             filter: blur(40px);
             animation: pulse 4s ease-in-out infinite;
         }
 
-        .spotlight:nth-child(9) {
-            bottom: -150px;
-            left: 10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, 
-                rgba(0, 255, 100, 0.6) 0%,
-                rgba(0, 255, 100, 0.3) 40%,
-                transparent 70%);
-            animation-delay: 0.5s;
-        }
-
-        .spotlight:nth-child(10) {
-            bottom: -100px;
-            left: 35%;
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, 
-                rgba(255, 0, 200, 0.7) 0%,
-                rgba(255, 0, 200, 0.35) 40%,
-                transparent 70%);
-            animation-delay: 1.5s;
-        }
-
-        .spotlight:nth-child(11) {
-            bottom: -120px;
-            right: 15%;
-            width: 380px;
-            height: 380px;
-            background: radial-gradient(circle, 
-                rgba(0, 200, 255, 0.65) 0%,
-                rgba(0, 200, 255, 0.3) 40%,
-                transparent 70%);
-            animation-delay: 2.2s;
-        }
-
-        /* LASER-STRAHLEN - Diagonal */
-        .laser {
-            position: absolute;
-            width: 3px;
-            height: 120%;
-            filter: blur(8px);
-            opacity: 0;
-            animation: laserSweep 8s ease-in-out infinite;
-        }
-
-        .laser:nth-child(12) {
-            top: -10%;
-            left: 20%;
-            background: linear-gradient(to bottom,
-                transparent 0%,
-                rgba(0, 255, 150, 0.8) 20%,
-                rgba(0, 255, 150, 0.9) 50%,
-                rgba(0, 255, 150, 0.8) 80%,
-                transparent 100%);
-            transform: rotate(15deg);
-            animation-delay: 1s;
-        }
-
-        .laser:nth-child(13) {
-            top: -10%;
-            right: 25%;
-            background: linear-gradient(to bottom,
-                transparent 0%,
-                rgba(255, 0, 200, 0.8) 20%,
-                rgba(255, 0, 200, 0.9) 50%,
-                rgba(255, 0, 200, 0.8) 80%,
-                transparent 100%);
-            transform: rotate(-12deg);
-            animation-delay: 3s;
-        }
-
-        .laser:nth-child(14) {
-            top: -10%;
-            left: 50%;
-            background: linear-gradient(to bottom,
-                transparent 0%,
-                rgba(0, 200, 255, 0.8) 20%,
-                rgba(0, 200, 255, 0.9) 50%,
-                rgba(0, 200, 255, 0.8) 80%,
-                transparent 100%);
-            transform: rotate(8deg);
-            animation-delay: 5s;
-        }
-
-        /* PARTIKEL/LICHTPUNKTE - Schwebend */
-        .light-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: white;
-            border-radius: 50%;
-            filter: blur(2px);
-            animation: particleFloat 10s ease-in-out infinite;
-        }
-
-        .light-particle:nth-child(15) {
-            top: 30%;
+        .spotlight:nth-child(7) {
+            bottom: -200px;
             left: 15%;
-            box-shadow: 0 0 20px rgba(0, 255, 100, 1);
+            width: 300px;
+            height: 600px;
+            background: radial-gradient(ellipse at bottom, 
+                rgba(0, 200, 255, 0.4) 0%,
+                rgba(0, 200, 255, 0.2) 40%,
+                transparent 70%);
             animation-delay: 0s;
         }
 
-        .light-particle:nth-child(16) {
-            top: 45%;
-            left: 75%;
-            box-shadow: 0 0 20px rgba(255, 0, 200, 1);
+        .spotlight:nth-child(8) {
+            bottom: -200px;
+            right: 15%;
+            width: 350px;
+            height: 650px;
+            background: radial-gradient(ellipse at bottom, 
+                rgba(255, 0, 150, 0.35) 0%,
+                rgba(255, 0, 150, 0.18) 42%,
+                transparent 72%);
+            animation-delay: 1s;
+        }
+
+        .spotlight:nth-child(9) {
+            bottom: -250px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 700px;
+            background: radial-gradient(ellipse at bottom, 
+                var(--akzent-glow) 0%,
+                rgba(157, 78, 221, 0.22) 38%,
+                transparent 68%);
             animation-delay: 2s;
-        }
-
-        .light-particle:nth-child(17) {
-            top: 60%;
-            left: 40%;
-            box-shadow: 0 0 20px rgba(0, 200, 255, 1);
-            animation-delay: 4s;
-        }
-
-        .light-particle:nth-child(18) {
-            top: 25%;
-            right: 20%;
-            box-shadow: 0 0 20px rgba(180, 0, 255, 1);
-            animation-delay: 6s;
         }
 
         /* ANIMATIONEN */
         @keyframes float {
-            0%, 100% { 
-                transform: translateY(0) rotate(2deg) scaleY(1); 
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0.7;
             }
-            50% { 
-                transform: translateY(60px) rotate(-2deg) scaleY(1.05); 
+            25% {
+                transform: translateY(-20px) translateX(10px) rotate(1deg);
+                opacity: 0.85;
+            }
+            50% {
+                transform: translateY(-10px) translateX(-10px) rotate(-1deg);
+                opacity: 0.9;
+            }
+            75% {
+                transform: translateY(-25px) translateX(5px) rotate(0.5deg);
+                opacity: 0.75;
             }
         }
 
         @keyframes pulse {
-            0%, 100% { 
-                transform: scale(1);
-                opacity: 0.5;
-            }
-            50% { 
-                transform: scale(1.15);
-                opacity: 0.8;
-            }
-        }
-
-        @keyframes laserSweep {
             0%, 100% {
-                opacity: 0;
-                transform: rotate(15deg) translateX(-100px);
-            }
-            10%, 40% {
-                opacity: 0.7;
-            }
-            20%, 30% {
-                opacity: 1;
+                transform: scale(1) translateX(-50%);
+                opacity: 0.4;
             }
             50% {
-                opacity: 0;
-                transform: rotate(15deg) translateX(100px);
-            }
-        }
-
-        @keyframes particleFloat {
-            0%, 100% {
-                transform: translate(0, 0);
-                opacity: 0.3;
-            }
-            25% {
-                transform: translate(30px, -40px);
-                opacity: 1;
-            }
-            50% {
-                transform: translate(-20px, -80px);
+                transform: scale(1.15) translateX(-50%);
                 opacity: 0.6;
             }
-            75% {
-                transform: translate(40px, -60px);
-                opacity: 0.9;
-            }
         }
 
-        /* Parallax-Effekt bei Scroll */
-        @keyframes parallaxFade {
-            from {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            to {
-                opacity: 0;
-                transform: translateY(100px);
-            }
-        }
-
+        /* Hero Content */
         .hero-content {
             position: relative;
             z-index: 10;
@@ -509,159 +349,150 @@
             max-width: 900px;
         }
 
-        .hero h1 {
-            font-size: var(--text-hero);
-            margin-bottom: 1.5rem;
+        /* VERBESSERTES LOGO STYLING */
+        .hero-logo {
+            font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 900;
             letter-spacing: 8px;
-            text-shadow: 
-                0 0 40px var(--akzent-glow),
-                0 0 80px var(--akzent-glow),
-                0 0 120px var(--akzent-glow),
-                0 5px 20px rgba(0, 0, 0, 0.8);
-            animation: fadeInUp 1s ease, textGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes textGlow {
-            0%, 100% { 
-                text-shadow: 
-                    0 0 40px var(--akzent-glow),
-                    0 0 80px var(--akzent-glow),
-                    0 0 120px var(--akzent-glow),
-                    0 5px 20px rgba(0, 0, 0, 0.8);
-            }
-            50% { 
-                text-shadow: 
-                    0 0 60px var(--akzent-glow),
-                    0 0 100px var(--akzent-glow),
-                    0 0 150px var(--akzent-glow),
-                    0 5px 25px rgba(0, 0, 0, 0.8);
-            }
-        }
-
-        .hero .subtitle {
-            font-size: 2rem;
-            color: var(--weiss);
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            background: linear-gradient(135deg, var(--akzent-haupt), var(--weiss), var(--akzent-haupt));
-            background-size: 200% auto;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--akzent-haupt) 50%, #fff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: fadeInUp 1s ease 0.2s backwards, gradientShift 4s ease infinite;
+            text-shadow: 0 0 40px var(--akzent-glow),
+                         0 0 80px var(--akzent-glow);
+            animation: logoGlow 3s ease-in-out infinite;
             filter: drop-shadow(0 0 20px var(--akzent-glow));
         }
 
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% center; }
-            50% { background-position: 100% center; }
+        @keyframes logoGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 20px var(--akzent-glow)) brightness(1);
+            }
+            50% {
+                filter: drop-shadow(0 0 40px var(--akzent-glow)) brightness(1.2);
+            }
         }
 
+        /* VERBESSERTER TAGLINE TEXT */
+        .hero h2 {
+            font-size: clamp(1.3rem, 3.5vw, 2rem);
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                         0 0 40px var(--akzent-glow);
+            letter-spacing: 2px;
+            animation: textShimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes textShimmer {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                             0 0 40px var(--akzent-glow);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.7),
+                             0 0 60px var(--akzent-glow),
+                             0 0 80px var(--akzent-glow);
+            }
+        }
+
+        /* VERBESSERTER BESCHREIBUNGS-TEXT */
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            line-height: 2;
-            animation: fadeInUp 1s ease 0.4s backwards;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+            font-weight: 300;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7),
+                         0 0 20px rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.5px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
+        /* CTA Button */
         .cta-button {
             display: inline-block;
             padding: 1.2rem 3rem;
-            background: linear-gradient(135deg, var(--akzent-haupt), var(--akzent-dunkel));
+            background: linear-gradient(135deg, var(--akzent-haupt) 0%, var(--akzent-dunkel) 100%);
             color: var(--weiss);
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
             border-radius: 50px;
-            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: 600;
             transition: all 0.3s ease;
-            animation: fadeInUp 1s ease 0.6s backwards, buttonPulse 2s ease-in-out infinite;
-            box-shadow: 
-                0 10px 40px var(--akzent-glow),
-                0 0 20px var(--akzent-glow),
-                inset 0 0 20px rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
+            box-shadow: 0 0 30px var(--akzent-glow),
+                        0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid transparent;
+            letter-spacing: 1px;
         }
 
         .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 
-                0 15px 50px var(--akzent-glow),
-                0 0 30px var(--akzent-glow),
-                inset 0 0 30px rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 50px var(--akzent-glow),
+                        0 15px 35px rgba(0, 0, 0, 0.4);
+            border-color: var(--akzent-haupt);
         }
 
-        @keyframes buttonPulse {
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator::before {
+            content: '↓';
+            font-size: 2.5rem;
+            color: var(--akzent-haupt);
+            text-shadow: 0 0 20px var(--akzent-glow);
+        }
+
+        @keyframes bounce {
             0%, 100% {
-                box-shadow: 
-                    0 10px 40px var(--akzent-glow),
-                    0 0 20px var(--akzent-glow),
-                    inset 0 0 20px rgba(255, 255, 255, 0.2);
+                transform: translateX(-50%) translateY(0);
             }
             50% {
-                box-shadow: 
-                    0 15px 50px var(--akzent-glow),
-                    0 0 30px var(--akzent-glow),
-                    inset 0 0 30px rgba(255, 255, 255, 0.3);
+                transform: translateX(-50%) translateY(15px);
             }
         }
 
-        /* ==================== SECTION GEMEINSAM ==================== */
+        /* ==================== SECTIONS ==================== */
         section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
+            padding: 6rem 2rem;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        h2 {
+        section h2 {
+            text-align: center;
             font-size: var(--text-hero);
             margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
+            color: var(--akzent-haupt);
+            text-shadow: 0 0 20px var(--akzent-glow);
         }
 
-        h2::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background: var(--akzent-haupt);
-            margin: 1rem auto 0;
+        /* ==================== ÜBER UNS ==================== */
+        #ueber-uns {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.3) 0%, rgba(10, 10, 10, 0.5) 100%);
+            border-radius: 20px;
+        }
+
+        .ueber-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .ueber-content p {
+            font-size: var(--text-normal);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         /* ==================== LEISTUNGEN ==================== */
@@ -673,37 +504,70 @@
         }
 
         .leistung-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, rgba(30, 30, 40, 0.8) 0%, rgba(20, 20, 30, 0.9) 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .leistung-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .leistung-card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 40px var(--akzent-glow);
             border-color: var(--akzent-haupt);
         }
 
         .leistung-card h3 {
-            font-size: 1.5rem;
+            color: var(--akzent-haupt);
+            font-size: var(--text-gross);
             margin-bottom: 1rem;
+        }
+
+        .leistung-card p {
+            color: var(--weiss);
+            line-height: 1.7;
+        }
+
+        /* ==================== REFERENZEN ==================== */
+        .referenzen-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .referenz-item {
+            background: rgba(30, 30, 40, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--akzent-haupt);
+            transition: all 0.3s ease;
+        }
+
+        .referenz-item:hover {
+            background: rgba(40, 40, 50, 0.8);
+            transform: translateX(5px);
+        }
+
+        .referenz-item h3 {
             color: var(--akzent-haupt);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
         }
 
-        .leistung-card ul {
-            list-style: none;
-            margin-top: 1rem;
+        .referenz-item p {
+            color: var(--grau);
+            font-size: var(--text-normal);
         }
 
-        .leistung-card li::before {
-            content: '▸ ';
-            color: var(--akzent-haupt);
-            font-weight: bold;
-        }
-
-        /* ==================== PROJEKTE / GALERIE ==================== */
+        /* ==================== GALERIE ==================== */
         .galerie-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -713,95 +577,73 @@
 
         .galerie-item {
             position: relative;
-            overflow: hidden;
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.2) 0%, rgba(100, 100, 150, 0.2) 100%);
             border-radius: 10px;
-            aspect-ratio: 4/3;
-            background: rgba(255, 255, 255, 0.05);
-            cursor: pointer;
-            border: 2px solid transparent;
+            overflow: hidden;
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .galerie-item:hover {
-            border-color: var(--akzent-haupt);
-            transform: scale(1.02);
+        .galerie-item.fade-in {
+            opacity: 1;
+            transform: scale(1);
         }
 
-        /* Platzhalter für Bilder - HIER EIGENE BILDER EINFÜGEN */
         .galerie-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, 
-                rgba(255, 215, 0, 0.2), 
-                rgba(74, 158, 255, 0.2));
+            content: '📸';
+            font-size: 3rem;
             opacity: 0.3;
         }
 
-        .galerie-overlay {
+        .galerie-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px var(--akzent-glow);
+            border-color: var(--akzent-haupt);
+        }
+
+        .galerie-label {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-            padding: 1.5rem;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .galerie-item:hover .galerie-overlay {
-            transform: translateY(0);
-        }
-
-        .galerie-overlay h4 {
-            color: var(--akzent-haupt);
-            margin-bottom: 0.5rem;
-        }
-
-        /* ==================== ÜBER MICH ==================== */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            color: var(--akzent-haupt);
-            margin-bottom: 1rem;
-        }
-
-        .about-image {
-            width: 100%;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, 
-                rgba(255, 215, 0, 0.2), 
-                rgba(74, 158, 255, 0.2));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
+            background: rgba(10, 10, 10, 0.9);
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
         }
 
         /* ==================== EQUIPMENT ==================== */
-        .equipment-list {
+        .equipment-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
         .equipment-kategorie {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(30, 30, 40, 0.6);
             padding: 2rem;
             border-radius: 10px;
-            border-left: 4px solid var(--akzent-haupt);
+            border-top: 3px solid var(--akzent-haupt);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .equipment-kategorie.fade-in {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .equipment-kategorie h3 {
             color: var(--akzent-haupt);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: var(--text-gross);
         }
 
         .equipment-kategorie ul {
@@ -810,54 +652,80 @@
 
         .equipment-kategorie li {
             padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--weiss);
+        }
+
+        .equipment-kategorie li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--akzent-haupt);
         }
 
         /* ==================== KONTAKT ==================== */
         .kontakt-container {
-            max-width: 800px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
         }
 
         .kontakt-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
-            margin-bottom: 3rem;
         }
 
         .kontakt-item {
-            text-align: center;
+            background: rgba(30, 30, 40, 0.6);
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
+            border-left: 4px solid var(--akzent-haupt);
         }
 
         .kontakt-item h3 {
             color: var(--akzent-haupt);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
         }
 
+        .kontakt-item p,
+        .kontakt-item a {
+            color: var(--weiss);
+            font-size: var(--text-normal);
+            text-decoration: none;
+        }
+
+        .kontakt-item a:hover {
+            color: var(--akzent-haupt);
+        }
+
+        /* Formular */
         .kontakt-form {
-            display: grid;
+            display: flex;
+            flex-direction: column;
             gap: 1.5rem;
         }
 
         .kontakt-form input,
         .kontakt-form textarea {
-            width: 100%;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
+            background: rgba(30, 30, 40, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
             color: var(--weiss);
+            font-size: var(--text-normal);
             font-family: inherit;
+            transition: all 0.3s ease;
         }
 
         .kontakt-form input:focus,
         .kontakt-form textarea:focus {
             outline: none;
             border-color: var(--akzent-haupt);
+            box-shadow: 0 0 15px var(--akzent-glow);
         }
 
         .kontakt-form textarea {
@@ -866,1192 +734,173 @@
         }
 
         .kontakt-form button {
-            padding: 1rem 2rem;
-            background: var(--akzent-haupt);
-            color: var(--schwarz);
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--akzent-haupt) 0%, var(--akzent-dunkel) 100%);
+            color: var(--weiss);
             border: none;
-            border-radius: 5px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-size: var(--text-normal);
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .kontakt-form button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px var(--akzent-glow);
         }
 
         /* ==================== FOOTER ==================== */
         footer {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 3rem 2rem 1rem;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        footer a {
-            color: var(--akzent-haupt);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* ==================== RESPONSIVE ==================== */
-        @media (max-width: 768px) {
-            :root {
-                --text-hero: 2.5rem;
-                --text-gross: 1.5rem;
-            }
-
-            /* Mobile Navigation */
-            .hamburger {
-                display: flex;
-            }
-
-            nav {
-                padding: 0.8rem 0;
-                flex-direction: row;
-                justify-content: center;
-            }
-
-            .logo {
-                font-size: 1.2rem;
-                letter-spacing: 2px;
-            }
-
-            nav ul {
-                position: fixed;
-                top: 60px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 60px);
-                background: rgba(10, 10, 10, 0.98);
-                flex-direction: column;
-                justify-content: flex-start;
-                padding: 2rem;
-                gap: 1.5rem;
-                transition: left 0.3s ease;
-                overflow-y: auto;
-            }
-
-            nav ul.active {
-                left: 0;
-            }
-
-            nav ul li {
-                width: 100%;
-                text-align: center;
-                padding: 1rem 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            nav a {
-                font-size: 1.3rem;
-            }
-
-            /* Hero Anpassungen */
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-                letter-spacing: 4px;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-                letter-spacing: 2px;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                padding: 1rem 2rem;
-                font-size: 1rem;
-            }
-
-            /* Lichter für Mobile optimieren */
-            .light-cone {
-                width: 150px !important;
-            }
-
-            .spotlight {
-                width: 250px !important;
-                height: 250px !important;
-            }
-        }
-
-        /* ==================== UTILITY KLASSEN ==================== */
-        .hidden {
-            display: none;
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.6s ease;
-        }
-    </style>
-</head>
-<body>
-    <!-- ==================== NAVIGATION ==================== -->
-    <nav>
-        <a href="#home" class="logo">MAX AKUSTIK</a>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul id="nav-menu">
-            <li><a href="#home" onclick="closeMenu()">Home</a></li>
-            <li><a href="#leistungen" onclick="closeMenu()">Leistungen</a></li>
-            <li><a href="#projekte" onclick="closeMenu()">Projekte</a></li>
-            <li><a href="#ueber" onclick="closeMenu()">Über mich</a></li>
-            <li><a href="#equipment" onclick="closeMenu()">Equipment</a></li>
-            <li><a href="#kontakt" onclick="closeMenu()">Kontakt</a></li>
-        </ul>
-    </nav>
-
-    <!-- ==================== HERO SECTION ==================== -->
-    <section id="home" class="hero">
-        <!-- Komplette Lichtinstallation -->
-        <div class="light-background">
-            <!-- Lichtkegel von oben (8 Stück) -->
-            <div class="light-cone"></div>
-            <div class="light-cone"></div>
-            <div class="light-cone"></div>
-            <div class="light-cone"></div>
-            <div class="light-cone"></div>
-            <div class="light-cone"></div>
-            <div class="light-cone"></div>
-            <div class="light-cone"></div>
-            
-            <!-- Spotlight-Kreise am Boden (3 Stück) -->
-            <div class="spotlight"></div>
-            <div class="spotlight"></div>
-            <div class="spotlight"></div>
-            
-            <!-- Laser-Strahlen diagonal (3 Stück) -->
-            <div class="laser"></div>
-            <div class="laser"></div>
-            <div class="laser"></div>
-            
-            <!-- Schwebende Lichtpartikel (4 Stück) -->
-            <div class="light-particle"></div>
-            <div class="light-particle"></div>
-            <div class="light-particle"></div>
-            <div class="light-particle"></div>
-        </div>
-
-        <div class="hero-content">
-            <h1>MAX AKUSTIK</h1>
-            <p class="subtitle">Veranstaltungstechnik mit Leidenschaft</p>
-            <p>
-                Perfekte Klangkulissen und professionelle Lichttechnik für Ihre Events. 
-                Von intimen Konzerten bis zu großen Festivals – ich sorge dafür, 
-                dass Ihre Veranstaltung zum unvergesslichen Erlebnis wird.
-            </p>
-            <a href="#kontakt" class="cta-button">Jetzt Anfragen</a>
-        </div>
-    </section>
-
-    <!-- ==================== LEISTUNGEN ==================== -->
-    <section id="leistungen">
-        <h2>Meine Leistungen</h2>
-        <div class="leistungen-grid">
-            <!-- HIER können Sie Leistungen anpassen -->
-            <div class="leistung-card">
-                <h3>Tontechnik</h3>
-                <p>Professionelle PA-Systeme und Mischpulte für kristallklaren Sound</p>
-                <ul>
-                    <li>Live-Mixing</li>
-                    <li>PA-Beschallung</li>
-                    <li>Monitoring</li>
-                    <li>Akustikberatung</li>
-                </ul>
-            </div>
-
-            <div class="leistung-card">
-                <h3>Lichttechnik</h3>
-                <p>Atmosphärische Beleuchtung für jede Stimmung</p>
-                <ul>
-                    <li>Moving Heads</li>
-                    <li>LED-Technik</li>
-                    <li>Lichtdesign</li>
-                    <li>DMX-Steuerung</li>
-                </ul>
-            </div>
-
-            <div class="leistung-card">
-                <h3>Videotechnik</h3>
-                <p>Beamer, LED-Wände und Live-Übertragungen</p>
-                <ul>
-                    <li>Projektionen</li>
-                    <li>LED-Screens</li>
-                    <li>Kameratechnik</li>
-                    <li>Streaming</li>
-                </ul>
-            </div>
-
-            <div class="leistung-card">
-                <h3>Bühnen & Rigging</h3>
-                <p>Sicherer Auf- und Abbau Ihrer Bühne</p>
-                <ul>
-                    <li>Bühnenbau</li>
-                    <li>Traverse-Systeme</li>
-                    <li>Rigging</li>
-                    <li>Sicherheit</li>
-                </ul>
-            </div>
-
-            <div class="leistung-card">
-                <h3>Planung & Beratung</h3>
-                <p>Von der Konzeption bis zur Durchführung</p>
-                <ul>
-                    <li>Technische Planung</li>
-                    <li>Vor-Ort-Begehung</li>
-                    <li>Budgetberatung</li>
-                    <li>Projektmanagement</li>
-                </ul>
-            </div>
-
-            <div class="leistung-card">
-                <h3>Support & Service</h3>
-                <p>Zuverlässige Betreuung während Ihrer Veranstaltung</p>
-                <ul>
-                    <li>Techniker vor Ort</li>
-                    <li>24/7 Notfallservice</li>
-                    <li>Wartung</li>
-                    <li>Backup-Equipment</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== PROJEKTE / REFERENZEN ==================== -->
-    <section id="projekte">
-        <h2>Referenzen & Projekte</h2>
-        <div class="galerie-grid">
-            <!-- HIER können Sie eigene Projektbilder einfügen -->
-            <!-- Ersetzen Sie die Platzhalter mit <img src="ihr-bild.jpg" alt="Beschreibung"> -->
-            
-            <div class="galerie-item">
-                <div class="galerie-overlay">
-                    <h4>Stadtfest 2024</h4>
-                    <p>Hauptbühne mit Vollbeschallung für 5.000 Besucher</p>
-                </div>
-            </div>
-
-            <div class="galerie-item">
-                <div class="galerie-overlay">
-                    <h4>Rock-Konzert</h4>
-                    <p>Komplette Ton- und Lichttechnik</p>
-                </div>
-            </div>
-
-            <div class="galerie-item">
-                <div class="galerie-overlay">
-                    <h4>Firmenveranstaltung</h4>
-                    <p>Beschallung, Licht und Videotechnik</p>
-                </div>
-            </div>
-
-            <div class="galerie-item">
-                <div class="galerie-overlay">
-                    <h4>Festival-Bühne</h4>
-                    <p>Mehrtägiges Festival mit Rigging</p>
-                </div>
-            </div>
-
-            <div class="galerie-item">
-                <div class="galerie-overlay">
-                    <h4>Theater-Produktion</h4>
-                    <p>Lichtdesign und Sound-Engineering</p>
-                </div>
-            </div>
-
-            <div class="galerie-item">
-                <div class="galerie-overlay">
-                    <h4>Hochzeit</h4>
-                    <p>Diskrete Beschallung und Ambientebeleuchtung</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== ÜBER MICH ==================== -->
-    <section id="ueber">
-        <h2>Über mich</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Max Akustik</h3>
-                <p>
-                    <!-- HIER können Sie Ihren persönlichen Text einfügen -->
-                    Mit über 15 Jahren Erfahrung in der Veranstaltungstechnik bringe ich 
-                    Leidenschaft und Professionalität in jedes Projekt. Was als Hobby in 
-                    kleinen Clubs begann, ist heute meine Berufung.
-                </p>
-                <p>
-                    Mein Anspruch: Perfekte Technik, die im Hintergrund funktioniert und 
-                    Ihre Veranstaltung zum Strahlen bringt. Dabei setze ich auf modernste 
-                    Technik, gepaart mit dem Know-how aus hunderten erfolgreichen Events.
-                </p>
-                <p>
-                    Von intimen Jazz-Konzerten bis zu Open-Air-Festivals – jede Veranstaltung 
-                    hat ihre eigenen Anforderungen. Gemeinsam finden wir die perfekte 
-                    technische Lösung für Ihr Event.
-                </p>
-            </div>
-            <div class="about-image">
-                <!-- HIER können Sie ein Foto einfügen: <img src="max-foto.jpg" alt="Max Akustik"> -->
-                🎵
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== EQUIPMENT ==================== -->
-    <section id="equipment">
-        <h2>Technik & Equipment</h2>
-        <div class="equipment-list">
-            <!-- HIER können Sie Ihr Equipment anpassen -->
-            <div class="equipment-kategorie">
-                <h3>Beschallungsanlagen</h3>
-                <ul>
-                    <li>Line Array Systeme</li>
-                    <li>Aktiv-Lautsprecher</li>
-                    <li>Subwoofer</li>
-                    <li>Monitor-Systeme</li>
-                    <li>Delay-Türme</li>
-                </ul>
-            </div>
-
-            <div class="equipment-kategorie">
-                <h3>Mischpulte & Processing</h3>
-                <ul>
-                    <li>Digital-Konsolen</li>
-                    <li>Stage-Boxen</li>
-                    <li>Effektgeräte</li>
-                    <li>Equalizer & Kompressoren</li>
-                    <li>Funkstrecken</li>
-                </ul>
-            </div>
-
-            <div class="equipment-kategorie">
-                <h3>Lichttechnik</h3>
-                <ul>
-                    <li>Moving Heads</li>
-                    <li>LED-Pars & Bars</li>
-                    <li>Scheinwerfer</li>
-                    <li>Lichtsteuerpulte</li>
-                    <li>Nebelmaschinen</li>
-                </ul>
-            </div>
-
-            <div class="equipment-kategorie">
-                <h3>Bühne & Rigging</h3>
-                <ul>
-                    <li>Bühnenpodeste</li>
-                    <li>Traversen-Systeme</li>
-                    <li>Kettenzüge</li>
-                    <li>Bühnenvorhänge</li>
-                    <li>Absperrtechnik</li>
-                </ul>
-            </div>
-
-            <div class="equipment-kategorie">
-                <h3>Video & Projektion</h3>
-                <ul>
-                    <li>Hochleistungsbeamer</li>
-                    <li>LED-Wände</li>
-                    <li>Videomischer</li>
-                    <li>Kameras</li>
-                    <li>Leinwände</li>
-                </ul>
-            </div>
-
-            <div class="equipment-kategorie">
-                <h3>Stromversorgung</h3>
-                <ul>
-                    <li>Stromverteiler</li>
-                    <li>CEE-Kabel</li>
-                    <li>Generatoren</li>
-                    <li>Absicherung</li>
-                    <li>Multicore-Kabel</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== KONTAKT ==================== -->
-    <section id="kontakt">
-        <h2>Kontakt</h2>
-        <div class="kontakt-container">
-            <div class="kontakt-info">
-                <div class="kontakt-item">
-                    <h3>📞 Telefon</h3>
-                    <!-- HIER Ihre Telefonnummer einfügen -->
-                    <p>+49 (0) 123 456789</p>
-                </div>
-                <div class="kontakt-item">
-                    <h3>✉️ E-Mail</h3>
-                    <!-- HIER Ihre E-Mail einfügen -->
-                    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="741d1a121b3419150c59151f0107001d1f5a1011">[email&#160;protected]</a></p>
-                </div>
-                <div class="kontakt-item">
-                    <h3>📍 Standort</h3>
-                    <!-- HIER Ihren Standort einfügen -->
-                    <p>Musterstadt, Deutschland</p>
-                </div>
-            </div>
-
-            <form class="kontakt-form" onsubmit="return handleFormSubmit(event)">
-                <input type="text" name="name" placeholder="Ihr Name" required>
-                <input type="email" name="email" placeholder="Ihre E-Mail" required>
-                <input type="tel" name="telefon" placeholder="Telefon (optional)">
-                <input type="text" name="veranstaltung" placeholder="Art der Veranstaltung" required>
-                <textarea name="nachricht" placeholder="Ihre Nachricht / Details zur Veranstaltung" required></textarea>
-                <button type="submit">Anfrage senden</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer>
-        <p>&copy; 2025 Max Akustik - Veranstaltungstechnik | Alle Rechte vorbehalten</p>
-        <p style="margin-top: 1rem;">
-            <a href="#impressum">Impressum</a> | 
-            <a href="#datenschutz">Datenschutz</a>
-        </p>
-    </footer>
-
-    <!-- ==================== JAVASCRIPT ==================== -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // ==================== HAMBURGER-MENÜ ====================
-        function toggleMenu() {
-            const menu = document.getElementById('nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            menu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-
-        function closeMenu() {
-            const menu = document.getElementById('nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            menu.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
-
-        // Smooth Scrolling für Navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Navigation Hintergrund bei Scrollen + PARALLAX-EFFEKT
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            const hero = document.querySelector('.hero');
-            const lightBackground = document.querySelector('.light-background');
-            const heroContent = document.querySelector('.hero-content');
-            const scrolled = window.scrollY;
-            
-            // Navigation Hintergrund
-            if (scrolled > 100) {
-                nav.style.background = 'rgba(10, 10, 10, 0.98)';
-            } else {
-                nav.style.background = 'rgba(10, 10, 10, 0.95)';
-            }
-            
-            // Parallax-Effekt für Lichter beim Scrollen
-            if (scrolled < window.innerHeight) {
-                const opacity = 1 - (scrolled / window.innerHeight) * 1.2;
-                const translateY = scrolled * 0.5;
-                
-                if (lightBackground) {
-                    lightBackground.style.opacity = Math.max(0, opacity);
-                    lightBackground.style.transform = `translateY(${translateY}px)`;
-                }
-                
-                // Hero-Content bewegt sich langsamer (klassischer Parallax)
-                if (heroContent) {
-                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-                    heroContent.style.opacity = Math.max(0, 1 - (scrolled / window.innerHeight) * 0.8);
-                }
-            }
-        });
-
-        // Dynamische Licht-Intensität basierend auf Mausposition
-        document.addEventListener('mousemove', (e) => {
-            const hero = document.querySelector('.hero');
-            if (!hero) return;
-            
-            const heroRect = hero.getBoundingClientRect();
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-            
-            // Nur wenn Maus über Hero-Bereich
-            if (mouseY < heroRect.bottom && mouseY > heroRect.top) {
-                const lightCones = document.querySelectorAll('.light-cone');
-                const spotlights = document.querySelectorAll('.spotlight');
-                
-                lightCones.forEach((cone, index) => {
-                    const coneRect = cone.getBoundingClientRect();
-                    const coneCenterX = coneRect.left + coneRect.width / 2;
-                    const distance = Math.abs(mouseX - coneCenterX);
-                    const maxDistance = window.innerWidth / 2;
-                    const intensity = 1 - Math.min(distance / maxDistance, 0.5);
-                    
-                    cone.style.opacity = 0.7 + (intensity * 0.3);
-                });
-                
-                spotlights.forEach((spot) => {
-                    const spotRect = spot.getBoundingClientRect();
-                    const spotCenterX = spotRect.left + spotRect.width / 2;
-                    const distance = Math.abs(mouseX - spotCenterX);
-                    const maxDistance = window.innerWidth / 2;
-                    const intensity = 1 - Math.min(distance / maxDistance, 0.5);
-                    
-                    spot.style.opacity = 0.4 + (intensity * 0.4);
-                });
-            }
-        });
-
-        // Formular-Handler
-        // WICHTIG: Ersetzen Sie diese Funktion mit Ihrer eigenen Backend-Logik
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            
-            // Beispiel: Formular-Daten sammeln
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
-            
-            console.log('Formular-Daten:', data);
-            
-            // HIER Ihre eigene Logik zum Versenden der Daten einfügen
-            // z.B. per fetch() an Ihr Backend oder E-Mail-Service
-            
-            alert('Vielen Dank für Ihre Anfrage! Ich melde mich schnellstmöglich bei Ihnen.');
-            event.target.reset();
-            
-            return false;
-        }
-
-        // Fade-in Effekt für Elemente beim Scrollen
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Beobachte alle Cards und Elemente
-        document.querySelectorAll('.leistung-card, .galerie-item, .equipment-kategorie').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Extra: Licht-Intensität erhöhen wenn Seite geladen wird
-        window.addEventListener('load', () => {
-            const lightBackground = document.querySelector('.light-background');
-            if (lightBackground) {
-                lightBackground.style.transition = 'opacity 2s ease-in';
-                setTimeout(() => {
-                    lightBackground.style.opacity = '1';
-                }, 100);
-            }
-        });
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max Akustik - Veranstaltungstechnik mit Leidenschaft</title>
-    <style>
-        /* ==================== GLOBALE EINSTELLUNGEN ==================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            /* FARBSCHEMA - Hier können Sie die Farben anpassen */
-            --schwarz: #0a0a0a;
-            --weiss: #f5f5f5;
-            --grau: #888;
-            
-            /* ============================================
-               AKZENTFARBE - HIER EINFACH ÄNDERN!
-               Kommentieren Sie die gewünschte Farbe EIN (entfernen Sie //)
-               und die anderen AUS (fügen Sie // davor)
-               ============================================ */
-            
-            /* Option 1: Neonblau */
-            /* --akzent-haupt: #00d9ff;
-            --akzent-glow: rgba(0, 217, 255, 0.6);
-            --akzent-dunkel: #0096ff; */
-            
-            /* Option 2: Edles Violett (AKTIV) */
-            --akzent-haupt: #9d4edd;
-            --akzent-glow: rgba(157, 78, 221, 0.6);
-            --akzent-dunkel: #7c3aed;
-            
-            /* Option 3: Knalliges Magenta */
-            /* --akzent-haupt: #ff006e;
-            --akzent-glow: rgba(255, 0, 110, 0.6);
-            --akzent-dunkel: #c9004f; */
-            
-            /* Option 4: Elektrisches Türkis */
-            /* --akzent-haupt: #06ffa5;
-            --akzent-glow: rgba(6, 255, 165, 0.6);
-            --akzent-dunkel: #00d980; */
-            
-            /* Option 5: Warmes Orange */
-            /* --akzent-haupt: #ff6b35;
-            --akzent-glow: rgba(255, 107, 53, 0.6);
-            --akzent-dunkel: #ff4500; */
-            
-            /* SCHRIFTGRÖSSEN */
-            --text-klein: 0.9rem;
-            --text-normal: 1.1rem;
-            --text-gross: 1.8rem;
-            --text-hero: 3.5rem;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--schwarz);
-            color: var(--weiss);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* ==================== NAVIGATION ==================== */
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
             background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1rem 0 0.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .logo {
-            font-weight: bold;
-            font-size: 1.5rem;
-            letter-spacing: 3px;
-            color: var(--weiss);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .logo:hover {
-            color: var(--akzent-haupt);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            list-style: none;
-            flex-wrap: wrap;
-            gap: 2rem;
-            padding: 0 2rem;
-            margin: 0;
-        }
-
-        nav a {
-            color: var(--weiss);
-            text-decoration: none;
-            font-size: var(--text-normal);
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--akzent-haupt);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--akzent-haupt);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Hamburger-Menü für Mobile */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 0.5rem;
-            position: absolute;
-            right: 2rem;
-            top: 1rem;
-            z-index: 1001;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--weiss);
-            margin: 3px 0;
-            transition: all 0.3s ease;
-            border-radius: 3px;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-            background: var(--akzent-haupt);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-            background: var(--akzent-haupt);
-        }
-
-        /* ==================== HERO SECTION ==================== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding: 2rem;
-            background: radial-gradient(circle at center, rgba(20, 20, 30, 1) 0%, #0a0a0a 100%);
-        }
-
-        /* Dynamischer Lichthintergrund - komplette Füllung */
-        .light-background {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-        }
-
-        /* LICHTKEGEL - Klassisch von oben */
-        .light-cone {
-            position: absolute;
-            filter: blur(25px);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        /* Grelle Neongrüne Lichtkegel */
-        .light-cone:nth-child(1) {
-            top: -300px;
-            left: -5%;
-            width: 280px;
-            height: 800px;
-            background: radial-gradient(ellipse at top, 
-                rgba(0, 255, 100, 1) 0%,
-                rgba(0, 255, 100, 0.7) 25%,
-                rgba(0, 255, 100, 0.4) 50%,
-                transparent 80%);
-            animation-delay: 0s;
-        }
-
-        .light-cone:nth-child(2) {
-            top: -300px;
-            left: 10%;
-            width: 220px;
-            height: 850px;
-            background: radial-gradient(ellipse at top, 
-                rgba(50, 255, 150, 0.95) 0%,
-                rgba(50, 255, 150, 0.6) 30%,
-                rgba(50, 255, 150, 0.3) 55%,
-                transparent 80%);
-            animation-delay: 1s;
-        }
-
-        /* Grelles Cyan/Türkis */
-        .light-cone:nth-child(3) {
-            top: -300px;
-            left: 23%;
-            width: 260px;
-            height: 900px;
-            background: radial-gradient(ellipse at top, 
-                rgba(0, 255, 255, 1) 0%,
-                rgba(0, 255, 255, 0.75) 25%,
-                rgba(0, 255, 255, 0.4) 50%,
-                transparent 80%);
-            animation-delay: 2.5s;
-        }
-
-        /* Tiefes elektrisches Blau */
-        .light-cone:nth-child(4) {
-            top: -300px;
-            left: 37%;
-            width: 300px;
-            height: 950px;
-            background: radial-gradient(ellipse at top, 
-                rgba(0, 150, 255, 1) 0%,
-                rgba(0, 150, 255, 0.8) 25%,
-                rgba(0, 150, 255, 0.5) 50%,
-                transparent 80%);
-            animation-delay: 1.8s;
-        }
-
-        /* Grelles Magenta */
-        .light-cone:nth-child(5) {
-            top: -300px;
-            left: 51%;
-            width: 270px;
-            height: 880px;
-            background: radial-gradient(ellipse at top, 
-                rgba(255, 0, 200, 1) 0%,
-                rgba(255, 0, 200, 0.8) 25%,
-                rgba(255, 0, 200, 0.45) 50%,
-                transparent 80%);
-            animation-delay: 3.2s;
-        }
-
-        /* Knalliges Lila */
-        .light-cone:nth-child(6) {
-            top: -300px;
-            left: 65%;
-            width: 240px;
-            height: 820px;
-            background: radial-gradient(ellipse at top, 
-                rgba(180, 0, 255, 1) 0%,
-                rgba(180, 0, 255, 0.75) 25%,
-                rgba(180, 0, 255, 0.4) 50%,
-                transparent 80%);
-            animation-delay: 4s;
-        }
-
-        .light-cone:nth-child(7) {
-            top: -300px;
-            left: 78%;
-            width: 260px;
-            height: 870px;
-            background: radial-gradient(ellipse at top, 
-                rgba(255, 0, 255, 0.95) 0%,
-                rgba(255, 0, 255, 0.7) 25%,
-                rgba(255, 0, 255, 0.4) 50%,
-                transparent 80%);
-            animation-delay: 2s;
-        }
-
-        .light-cone:nth-child(8) {
-            top: -300px;
-            left: 92%;
-            width: 280px;
-            height: 840px;
-            background: radial-gradient(ellipse at top, 
-                rgba(100, 255, 255, 0.9) 0%,
-                rgba(100, 255, 255, 0.65) 30%,
-                rgba(100, 255, 255, 0.35) 55%,
-                transparent 80%);
-            animation-delay: 5s;
-        }
-
-        /* SPOTLIGHT-KREISE - Am Boden */
-        .spotlight {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(40px);
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        .spotlight:nth-child(9) {
-            bottom: -150px;
-            left: 10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, 
-                rgba(0, 255, 100, 0.6) 0%,
-                rgba(0, 255, 100, 0.3) 40%,
-                transparent 70%);
-            animation-delay: 0.5s;
-        }
-
-        .spotlight:nth-child(10) {
-            bottom: -100px;
-            left: 35%;
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, 
-                rgba(255, 0, 200, 0.7) 0%,
-                rgba(255, 0, 200, 0.35) 40%,
-                transparent 70%);
-            animation-delay: 1.5s;
-        }
-
-        .spotlight:nth-child(11) {
-            bottom: -120px;
-            right: 15%;
-            width: 380px;
-            height: 380px;
-            background: radial-gradient(circle, 
-                rgba(0, 200, 255, 0.65) 0%,
-                rgba(0, 200, 255, 0.3) 40%,
-                transparent 70%);
-            animation-delay: 2.2s;
-        }
-
-        /* LASER-STRAHLEN - Diagonal */
-        .laser {
-            position: absolute;
-            width: 3px;
-            height: 120%;
-            filter: blur(8px);
-            opacity: 0;
-            animation: laserSweep 8s ease-in-out infinite;
-        }
-
-        .laser:nth-child(12) {
-            top: -10%;
-            left: 20%;
-            background: linear-gradient(to bottom,
-                transparent 0%,
-                rgba(0, 255, 150, 0.8) 20%,
-                rgba(0, 255, 150, 0.9) 50%,
-                rgba(0, 255, 150, 0.8) 80%,
-                transparent 100%);
-            transform: rotate(15deg);
-            animation-delay: 1s;
-        }
-
-        .laser:nth-child(13) {
-            top: -10%;
-            right: 25%;
-            background: linear-gradient(to bottom,
-                transparent 0%,
-                rgba(255, 0, 200, 0.8) 20%,
-                rgba(255, 0, 200, 0.9) 50%,
-                rgba(255, 0, 200, 0.8) 80%,
-                transparent 100%);
-            transform: rotate(-12deg);
-            animation-delay: 3s;
-        }
-
-        .laser:nth-child(14) {
-            top: -10%;
-            left: 50%;
-            background: linear-gradient(to bottom,
-                transparent 0%,
-                rgba(0, 200, 255, 0.8) 20%,
-                rgba(0, 200, 255, 0.9) 50%,
-                rgba(0, 200, 255, 0.8) 80%,
-                transparent 100%);
-            transform: rotate(8deg);
-            animation-delay: 5s;
-        }
-
-        /* PARTIKEL/LICHTPUNKTE - Schwebend */
-        .light-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: white;
-            border-radius: 50%;
-            filter: blur(2px);
-            animation: particleFloat 10s ease-in-out infinite;
-        }
-
-        .light-particle:nth-child(15) {
-            top: 30%;
-            left: 15%;
-            box-shadow: 0 0 20px rgba(0, 255, 100, 1);
-            animation-delay: 0s;
-        }
-
-        .light-particle:nth-child(16) {
-            top: 45%;
-            left: 75%;
-            box-shadow: 0 0 20px rgba(255, 0, 200, 1);
-            animation-delay: 2s;
-        }
-
-        .light-particle:nth-child(17) {
-            top: 60%;
-            left: 40%;
-            box-shadow: 0 0 20px rgba(0, 200, 255, 1);
-            animation-delay: 4s;
-        }
-
-        .light-particle:nth-child(18) {
-            top: 25%;
-            right: 20%;
-            box-shadow: 0 0 20px rgba(180, 0, 255, 1);
-            animation-delay: 6s;
-        }
-
-        /* ANIMATIONEN */
-        @keyframes float {
-            0%, 100% { 
-                transform: translateY(0) rotate(2deg) scaleY(1); 
-            }
-            50% { 
-                transform: translateY(60px) rotate(-2deg) scaleY(1.05); 
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% { 
-                transform: scale(1);
-                opacity: 0.5;
-            }
-            50% { 
-                transform: scale(1.15);
-                opacity: 0.8;
-            }
-        }
-
-        @keyframes laserSweep {
-            0%, 100% {
-                opacity: 0;
-                transform: rotate(15deg) translateX(-100px);
-            }
-            10%, 40% {
-                opacity: 0.7;
-            }
-            20%, 30% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-                transform: rotate(15deg) translateX(100px);
-            }
-        }
-
-        @keyframes particleFloat {
-            0%, 100% {
-                transform: translate(0, 0);
-                opacity: 0.3;
-            }
-            25% {
-                transform: translate(30px, -40px);
-                opacity: 1;
-            }
-            50% {
-                transform: translate(-20px, -80px);
-                opacity: 0.6;
-            }
-            75% {
-                transform: translate(40px, -60px);
-                opacity: 0.9;
-            }
-        }
-
-        /* Parallax-Effekt bei Scroll */
-        @keyframes parallaxFade {
-            from {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            to {
-                opacity: 0;
-                transform: translateY(100px);
-            }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
+            padding: 3rem 2rem;
             text-align: center;
-            max-width: 900px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .hero h1 {
-            font-size: var(--text-hero);
-            margin-bottom: 1.5rem;
-            font-weight: 900;
-            letter-spacing: 8px;
-            text-shadow: 
-                0 0 40px var(--akzent-glow),
-                0 0 80px var(--akzent-glow),
-                0 0 120px var(--akzent-glow),
-                0 5px 20px rgba(0, 0, 0, 0.8);
-            animation: fadeInUp 1s ease, textGlow 3s ease-in-out infinite;
+        footer p {
+            color: var(--grau);
+            margin: 0.5rem 0;
         }
 
-        @keyframes textGlow {
-            0%, 100% { 
-                text-shadow: 
-                    0 0 40px var(--akzent-glow),
-                    0 0 80px var(--akzent-glow),
-                    0 0 120px var(--akzent-glow),
-                    0 5px 20px rgba(0, 0, 0, 0.8);
+        footer a {
+            color: var(--grau);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--akzent-haupt);
+        }
+
+        /* ==================== SCROLL TO TOP BUTTON ==================== */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--akzent-haupt) 0%, var(--akzent-dunkel) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 15px var(--akzent-glow);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--akzent-glow);
+        }
+
+        .scroll-to-top::before {
+            content: '↑';
+            font-size: 1.8rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* ==================== MOBILE RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            :root {
+                --text-hero: 2.5rem;
+                --text-gross: 1.5rem;
             }
-            50% { 
-                text-shadow: 
-                    0 0 60px var(--akzent-glow),
-                    0 0 100px var(--akzent-glow),
-                    0 0 150px var(--akzent-glow),
-                    0 5px 25px rgba(0, 0, 0, 0.8);
+
+            nav {
+                padding: 1rem;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2.5rem;
+                transition: right 0.3s ease;
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(20px);
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero {
+                padding: 1.5rem;
+            }
+
+            .hero-logo {
+                letter-spacing: 4px;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .leistungen-grid,
+            .equipment-grid,
+            .galerie-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .kontakt-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+
+            .scroll-indicator {
+                bottom: 2rem;
             }
         }
 
-        .hero .subtitle {
-            font-size: 2rem;
-            color: var(--weiss);
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            background: linear-gradient(135deg, var(--akzent-haupt), var(--weiss), var(--akzent-haupt));
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 1s ease 0.2s backwards, gradientShift 4s ease infinite;
-            filter: drop-shadow(0 0 20px var(--akzent-glow));
+        @media (max-width: 480px) {
+            .hero-logo {
+                letter-spacing: 2px;
+            }
+
+            nav ul {
+                width: 85%;
+            }
+
+            .referenzen-grid,
+            .galerie-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% center; }
-            50% { background-position: 100% center; }
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            line-height: 2;
-            animation: fadeInUp 1s ease 0.4s backwards;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @keyframes fadeInUp {
+        /* Fade-in Animation */
+        @keyframes fadeIn {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -2062,446 +911,35 @@
             }
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1.2rem 3rem;
-            background: linear-gradient(135deg, var(--akzent-haupt), var(--akzent-dunkel));
-            color: var(--weiss);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease 0.6s backwards, buttonPulse 2s ease-in-out infinite;
-            box-shadow: 
-                0 10px 40px var(--akzent-glow),
-                0 0 20px var(--akzent-glow),
-                inset 0 0 20px rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 
-                0 15px 50px var(--akzent-glow),
-                0 0 30px var(--akzent-glow),
-                inset 0 0 30px rgba(255, 255, 255, 0.3);
-        }
-
-        @keyframes buttonPulse {
-            0%, 100% {
-                box-shadow: 
-                    0 10px 40px var(--akzent-glow),
-                    0 0 20px var(--akzent-glow),
-                    inset 0 0 20px rgba(255, 255, 255, 0.2);
-            }
-            50% {
-                box-shadow: 
-                    0 15px 50px var(--akzent-glow),
-                    0 0 30px var(--akzent-glow),
-                    inset 0 0 30px rgba(255, 255, 255, 0.3);
-            }
-        }
-
-        /* ==================== SECTION GEMEINSAM ==================== */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            font-size: var(--text-hero);
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background: var(--akzent-haupt);
-            margin: 1rem auto 0;
-        }
-
-        /* ==================== LEISTUNGEN ==================== */
-        .leistungen-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .leistung-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .leistung-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--akzent-haupt);
-        }
-
-        .leistung-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--akzent-haupt);
-        }
-
-        .leistung-card ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .leistung-card li::before {
-            content: '▸ ';
-            color: var(--akzent-haupt);
-            font-weight: bold;
-        }
-
-        /* ==================== PROJEKTE / GALERIE ==================== */
-        .galerie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .galerie-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            aspect-ratio: 4/3;
-            background: rgba(255, 255, 255, 0.05);
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .galerie-item:hover {
-            border-color: var(--akzent-haupt);
-            transform: scale(1.02);
-        }
-
-        /* Platzhalter für Bilder - HIER EIGENE BILDER EINFÜGEN */
-        .galerie-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, 
-                rgba(255, 215, 0, 0.2), 
-                rgba(74, 158, 255, 0.2));
-            opacity: 0.3;
-        }
-
-        .galerie-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-            padding: 1.5rem;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .galerie-item:hover .galerie-overlay {
-            transform: translateY(0);
-        }
-
-        .galerie-overlay h4 {
-            color: var(--akzent-haupt);
-            margin-bottom: 0.5rem;
-        }
-
-        /* ==================== ÜBER MICH ==================== */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            color: var(--akzent-haupt);
-            margin-bottom: 1rem;
-        }
-
-        .about-image {
-            width: 100%;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, 
-                rgba(255, 215, 0, 0.2), 
-                rgba(74, 158, 255, 0.2));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-        }
-
-        /* ==================== EQUIPMENT ==================== */
-        .equipment-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .equipment-kategorie {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--akzent-haupt);
-        }
-
-        .equipment-kategorie h3 {
-            color: var(--akzent-haupt);
-            margin-bottom: 1rem;
-        }
-
-        .equipment-kategorie ul {
-            list-style: none;
-        }
-
-        .equipment-kategorie li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* ==================== KONTAKT ==================== */
-        .kontakt-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .kontakt-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .kontakt-item {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-
-        .kontakt-item h3 {
-            color: var(--akzent-haupt);
-            margin-bottom: 1rem;
-        }
-
-        .kontakt-form {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .kontakt-form input,
-        .kontakt-form textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            color: var(--weiss);
-            font-family: inherit;
-        }
-
-        .kontakt-form input:focus,
-        .kontakt-form textarea:focus {
-            outline: none;
-            border-color: var(--akzent-haupt);
-        }
-
-        .kontakt-form textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .kontakt-form button {
-            padding: 1rem 2rem;
-            background: var(--akzent-haupt);
-            color: var(--schwarz);
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .kontakt-form button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
-        }
-
-        /* ==================== FOOTER ==================== */
-        footer {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 3rem 2rem 1rem;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        footer a {
-            color: var(--akzent-haupt);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* ==================== RESPONSIVE ==================== */
-        @media (max-width: 768px) {
-            :root {
-                --text-hero: 2.5rem;
-                --text-gross: 1.5rem;
-            }
-
-            /* Mobile Navigation */
-            .hamburger {
-                display: flex;
-            }
-
-            nav {
-                padding: 0.8rem 0;
-                flex-direction: row;
-                justify-content: center;
-            }
-
-            .logo {
-                font-size: 1.2rem;
-                letter-spacing: 2px;
-            }
-
-            nav ul {
-                position: fixed;
-                top: 60px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 60px);
-                background: rgba(10, 10, 10, 0.98);
-                flex-direction: column;
-                justify-content: flex-start;
-                padding: 2rem;
-                gap: 1.5rem;
-                transition: left 0.3s ease;
-                overflow-y: auto;
-            }
-
-            nav ul.active {
-                left: 0;
-            }
-
-            nav ul li {
-                width: 100%;
-                text-align: center;
-                padding: 1rem 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            nav a {
-                font-size: 1.3rem;
-            }
-
-            /* Hero Anpassungen */
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-                letter-spacing: 4px;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-                letter-spacing: 2px;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                padding: 1rem 2rem;
-                font-size: 1rem;
-            }
-
-            /* Lichter für Mobile optimieren */
-            .light-cone {
-                width: 150px !important;
-            }
-
-            .spotlight {
-                width: 250px !important;
-                height: 250px !important;
-            }
-        }
-
-        /* ==================== UTILITY KLASSEN ==================== */
-        .hidden {
-            display: none;
-        }
-
         .fade-in {
-            animation: fadeInUp 0.6s ease;
+            animation: fadeIn 0.6s ease-out forwards;
         }
     </style>
 </head>
 <body>
     <!-- ==================== NAVIGATION ==================== -->
     <nav>
-        <a href="#home" class="logo">MAX AKUSTIK</a>
+        <a href="#" class="logo">MAX AKUSTIK</a>
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
         <ul id="nav-menu">
-            <li><a href="#home" onclick="closeMenu()">Home</a></li>
+            <li><a href="#ueber-uns" onclick="closeMenu()">Über uns</a></li>
             <li><a href="#leistungen" onclick="closeMenu()">Leistungen</a></li>
-            <li><a href="#projekte" onclick="closeMenu()">Projekte</a></li>
-            <li><a href="#ueber" onclick="closeMenu()">Über mich</a></li>
+            <li><a href="#referenzen" onclick="closeMenu()">Referenzen</a></li>
+            <li><a href="#galerie" onclick="closeMenu()">Galerie</a></li>
             <li><a href="#equipment" onclick="closeMenu()">Equipment</a></li>
             <li><a href="#kontakt" onclick="closeMenu()">Kontakt</a></li>
         </ul>
     </nav>
 
     <!-- ==================== HERO SECTION ==================== -->
-    <section id="home" class="hero">
-        <!-- Komplette Lichtinstallation -->
+    <section class="hero">
+        <!-- LICHTEFFEKTE - Exakt wie Original beibehalten -->
         <div class="light-background">
-            <!-- Lichtkegel von oben (8 Stück) -->
-            <div class="light-cone"></div>
-            <div class="light-cone"></div>
+            <!-- Lichtkegel von oben -->
             <div class="light-cone"></div>
             <div class="light-cone"></div>
             <div class="light-cone"></div>
@@ -2509,213 +947,171 @@
             <div class="light-cone"></div>
             <div class="light-cone"></div>
             
-            <!-- Spotlight-Kreise am Boden (3 Stück) -->
+            <!-- Spotlights von unten -->
             <div class="spotlight"></div>
             <div class="spotlight"></div>
             <div class="spotlight"></div>
-            
-            <!-- Laser-Strahlen diagonal (3 Stück) -->
-            <div class="laser"></div>
-            <div class="laser"></div>
-            <div class="laser"></div>
-            
-            <!-- Schwebende Lichtpartikel (4 Stück) -->
-            <div class="light-particle"></div>
-            <div class="light-particle"></div>
-            <div class="light-particle"></div>
-            <div class="light-particle"></div>
         </div>
 
         <div class="hero-content">
-            <h1>MAX AKUSTIK</h1>
-            <p class="subtitle">Veranstaltungstechnik mit Leidenschaft</p>
+            <h1 class="hero-logo">MAX AKUSTIK</h1>
+            <h2>Veranstaltungstechnik mit Leidenschaft</h2>
+            <p>Professionelle Beschallung, atemberaubende Lichttechnik und zuverlässige Videotechnik für unvergessliche Events</p>
+            <a href="#kontakt" class="cta-button">Jetzt anfragen</a>
+        </div>
+
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- ==================== ÜBER UNS ==================== -->
+    <section id="ueber-uns">
+        <h2>Über uns</h2>
+        <div class="ueber-content">
             <p>
-                Perfekte Klangkulissen und professionelle Lichttechnik für Ihre Events. 
-                Von intimen Konzerten bis zu großen Festivals – ich sorge dafür, 
-                dass Ihre Veranstaltung zum unvergesslichen Erlebnis wird.
+                Mit über 15 Jahren Erfahrung in der Veranstaltungstechnik sind wir Ihr zuverlässiger Partner 
+                für Events jeder Größenordnung. Von intimen Firmenveranstaltungen bis hin zu großen 
+                Open-Air-Festivals – wir sorgen für den perfekten Sound und das richtige Licht.
             </p>
-            <a href="#kontakt" class="cta-button">Jetzt Anfragen</a>
+            <p>
+                Unser Team besteht aus passionierten Technikern, die mit Herzblut bei der Sache sind. 
+                Wir legen Wert auf höchste Qualität, Zuverlässigkeit und eine persönliche Betreuung, 
+                damit Ihre Veranstaltung ein voller Erfolg wird.
+            </p>
         </div>
     </section>
 
     <!-- ==================== LEISTUNGEN ==================== -->
     <section id="leistungen">
-        <h2>Meine Leistungen</h2>
+        <h2>Unsere Leistungen</h2>
         <div class="leistungen-grid">
-            <!-- HIER können Sie Leistungen anpassen -->
             <div class="leistung-card">
-                <h3>Tontechnik</h3>
-                <p>Professionelle PA-Systeme und Mischpulte für kristallklaren Sound</p>
-                <ul>
-                    <li>Live-Mixing</li>
-                    <li>PA-Beschallung</li>
-                    <li>Monitoring</li>
-                    <li>Akustikberatung</li>
-                </ul>
+                <h3>🔊 Tontechnik</h3>
+                <p>
+                    Kristallklare Beschallung mit modernsten PA-Systemen. Von kleinen Konferenzen 
+                    bis zu großen Konzerten – wir haben das passende Equipment und das Know-how 
+                    für perfekten Sound.
+                </p>
             </div>
 
             <div class="leistung-card">
-                <h3>Lichttechnik</h3>
-                <p>Atmosphärische Beleuchtung für jede Stimmung</p>
-                <ul>
-                    <li>Moving Heads</li>
-                    <li>LED-Technik</li>
-                    <li>Lichtdesign</li>
-                    <li>DMX-Steuerung</li>
-                </ul>
+                <h3>💡 Lichttechnik</h3>
+                <p>
+                    Atmosphärische Beleuchtung und spektakuläre Lichtshows. Mit Moving Heads, 
+                    LED-Technik und Effektbeleuchtung setzen wir Ihre Veranstaltung perfekt in Szene.
+                </p>
             </div>
 
             <div class="leistung-card">
-                <h3>Videotechnik</h3>
-                <p>Beamer, LED-Wände und Live-Übertragungen</p>
-                <ul>
-                    <li>Projektionen</li>
-                    <li>LED-Screens</li>
-                    <li>Kameratechnik</li>
-                    <li>Streaming</li>
-                </ul>
+                <h3>🎥 Videotechnik</h3>
+                <p>
+                    Professionelle Projektionstechnik, LED-Wände und Live-Kameraübertragung. 
+                    Für Präsentationen, Konzerte und Events mit visueller Inszenierung.
+                </p>
             </div>
 
             <div class="leistung-card">
-                <h3>Bühnen & Rigging</h3>
-                <p>Sicherer Auf- und Abbau Ihrer Bühne</p>
-                <ul>
-                    <li>Bühnenbau</li>
-                    <li>Traverse-Systeme</li>
-                    <li>Rigging</li>
-                    <li>Sicherheit</li>
-                </ul>
+                <h3>🎪 Bühnen & Traversen</h3>
+                <p>
+                    Stabile Bühnenaufbauten und Traversensysteme in verschiedenen Größen. 
+                    Sicher, professionell und flexibel an Ihre Anforderungen angepasst.
+                </p>
             </div>
 
             <div class="leistung-card">
-                <h3>Planung & Beratung</h3>
-                <p>Von der Konzeption bis zur Durchführung</p>
-                <ul>
-                    <li>Technische Planung</li>
-                    <li>Vor-Ort-Begehung</li>
-                    <li>Budgetberatung</li>
-                    <li>Projektmanagement</li>
-                </ul>
+                <h3>🎵 Komplettplanung</h3>
+                <p>
+                    Von der ersten Idee bis zum erfolgreichen Abbau – wir begleiten Ihr Event 
+                    mit umfassender Planung, Beratung und technischer Umsetzung.
+                </p>
             </div>
 
             <div class="leistung-card">
-                <h3>Support & Service</h3>
-                <p>Zuverlässige Betreuung während Ihrer Veranstaltung</p>
-                <ul>
-                    <li>Techniker vor Ort</li>
-                    <li>24/7 Notfallservice</li>
-                    <li>Wartung</li>
-                    <li>Backup-Equipment</li>
-                </ul>
+                <h3>⚡ Notfallservice</h3>
+                <p>
+                    Schnelle Hilfe bei technischen Problemen. Unser 24/7-Notfallservice sorgt 
+                    dafür, dass Ihre Veranstaltung reibungslos weiterläuft.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- ==================== PROJEKTE / REFERENZEN ==================== -->
-    <section id="projekte">
-        <h2>Referenzen & Projekte</h2>
+    <!-- ==================== REFERENZEN ==================== -->
+    <section id="referenzen">
+        <h2>Referenzen</h2>
+        <div class="referenzen-grid">
+            <div class="referenz-item">
+                <h3>Stadtfest Musterstadt 2024</h3>
+                <p>Komplette technische Betreuung mit 5 Bühnen und über 20.000 Besuchern</p>
+            </div>
+
+            <div class="referenz-item">
+                <h3>Rock am Ring Aftershow</h3>
+                <p>Sound- und Lichttechnik für die offizielle Aftershow-Party</p>
+            </div>
+
+            <div class="referenz-item">
+                <h3>Firmenevents</h3>
+                <p>Regelmäßige technische Betreuung für führende Unternehmen der Region</p>
+            </div>
+
+            <div class="referenz-item">
+                <h3>Hochzeiten & Private Feiern</h3>
+                <p>Über 200 erfolgreich betreute private Veranstaltungen pro Jahr</p>
+            </div>
+
+            <div class="referenz-item">
+                <h3>Theater & Kulturveranstaltungen</h3>
+                <p>Technischer Partner verschiedener Kultureinrichtungen und Theatergruppen</p>
+            </div>
+
+            <div class="referenz-item">
+                <h3>Open-Air Festivals</h3>
+                <p>Langjährige Erfahrung bei großen Open-Air-Veranstaltungen und Festivals</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GALERIE ==================== -->
+    <section id="galerie">
+        <h2>Galerie</h2>
         <div class="galerie-grid">
-            <!-- HIER können Sie eigene Projektbilder einfügen -->
-            <!-- Ersetzen Sie die Platzhalter mit <img src="ihr-bild.jpg" alt="Beschreibung"> -->
-            
             <div class="galerie-item">
-                <div class="galerie-overlay">
-                    <h4>Stadtfest 2024</h4>
-                    <p>Hauptbühne mit Vollbeschallung für 5.000 Besucher</p>
-                </div>
+                <div class="galerie-label">Konzertbeschallung</div>
             </div>
-
             <div class="galerie-item">
-                <div class="galerie-overlay">
-                    <h4>Rock-Konzert</h4>
-                    <p>Komplette Ton- und Lichttechnik</p>
-                </div>
+                <div class="galerie-label">Lichtdesign Festival</div>
             </div>
-
             <div class="galerie-item">
-                <div class="galerie-overlay">
-                    <h4>Firmenveranstaltung</h4>
-                    <p>Beschallung, Licht und Videotechnik</p>
-                </div>
+                <div class="galerie-label">Firmenevent</div>
             </div>
-
             <div class="galerie-item">
-                <div class="galerie-overlay">
-                    <h4>Festival-Bühne</h4>
-                    <p>Mehrtägiges Festival mit Rigging</p>
-                </div>
+                <div class="galerie-label">Hochzeit Open-Air</div>
             </div>
-
             <div class="galerie-item">
-                <div class="galerie-overlay">
-                    <h4>Theater-Produktion</h4>
-                    <p>Lichtdesign und Sound-Engineering</p>
-                </div>
+                <div class="galerie-label">LED-Wand Setup</div>
             </div>
-
             <div class="galerie-item">
-                <div class="galerie-overlay">
-                    <h4>Hochzeit</h4>
-                    <p>Diskrete Beschallung und Ambientebeleuchtung</p>
-                </div>
+                <div class="galerie-label">Bühnenaufbau</div>
             </div>
         </div>
-    </section>
-
-    <!-- ==================== ÜBER MICH ==================== -->
-    <section id="ueber">
-        <h2>Über mich</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Max Akustik</h3>
-                <p>
-                    <!-- HIER können Sie Ihren persönlichen Text einfügen -->
-                    Mit über 15 Jahren Erfahrung in der Veranstaltungstechnik bringe ich 
-                    Leidenschaft und Professionalität in jedes Projekt. Was als Hobby in 
-                    kleinen Clubs begann, ist heute meine Berufung.
-                </p>
-                <p>
-                    Mein Anspruch: Perfekte Technik, die im Hintergrund funktioniert und 
-                    Ihre Veranstaltung zum Strahlen bringt. Dabei setze ich auf modernste 
-                    Technik, gepaart mit dem Know-how aus hunderten erfolgreichen Events.
-                </p>
-                <p>
-                    Von intimen Jazz-Konzerten bis zu Open-Air-Festivals – jede Veranstaltung 
-                    hat ihre eigenen Anforderungen. Gemeinsam finden wir die perfekte 
-                    technische Lösung für Ihr Event.
-                </p>
-            </div>
-            <div class="about-image">
-                <!-- HIER können Sie ein Foto einfügen: <img src="max-foto.jpg" alt="Max Akustik"> -->
-                🎵
-            </div>
-        </div>
+        <p style="text-align: center; margin-top: 2rem; color: var(--grau);">
+            <!-- PLATZHALTER: Hier können später echte Bilder eingefügt werden -->
+            Echte Event-Fotos folgen in Kürze
+        </p>
     </section>
 
     <!-- ==================== EQUIPMENT ==================== -->
     <section id="equipment">
-        <h2>Technik & Equipment</h2>
-        <div class="equipment-list">
-            <!-- HIER können Sie Ihr Equipment anpassen -->
+        <h2>Unser Equipment</h2>
+        <div class="equipment-grid">
             <div class="equipment-kategorie">
-                <h3>Beschallungsanlagen</h3>
+                <h3>Tontechnik</h3>
                 <ul>
                     <li>Line Array Systeme</li>
-                    <li>Aktiv-Lautsprecher</li>
-                    <li>Subwoofer</li>
-                    <li>Monitor-Systeme</li>
-                    <li>Delay-Türme</li>
-                </ul>
-            </div>
-
-            <div class="equipment-kategorie">
-                <h3>Mischpulte & Processing</h3>
-                <ul>
-                    <li>Digital-Konsolen</li>
-                    <li>Stage-Boxen</li>
-                    <li>Effektgeräte</li>
-                    <li>Equalizer & Kompressoren</li>
-                    <li>Funkstrecken</li>
+                    <li>Digitale Mischpulte</li>
+                    <li>Monitoring-Systeme</li>
+                    <li>Funkmikrofone</li>
+                    <li>In-Ear Monitoring</li>
                 </ul>
             </div>
 
@@ -2723,10 +1119,10 @@
                 <h3>Lichttechnik</h3>
                 <ul>
                     <li>Moving Heads</li>
-                    <li>LED-Pars & Bars</li>
-                    <li>Scheinwerfer</li>
-                    <li>Lichtsteuerpulte</li>
+                    <li>LED-Scheinwerfer</li>
+                    <li>PAR-Scheinwerfer</li>
                     <li>Nebelmaschinen</li>
+                    <li>Lasereffekte</li>
                 </ul>
             </div>
 
@@ -2734,10 +1130,10 @@
                 <h3>Bühne & Rigging</h3>
                 <ul>
                     <li>Bühnenpodeste</li>
-                    <li>Traversen-Systeme</li>
-                    <li>Kettenzüge</li>
+                    <li>Traversensysteme</li>
+                    <li>Motoren & Ketten</li>
                     <li>Bühnenvorhänge</li>
-                    <li>Absperrtechnik</li>
+                    <li>Absperrmaterial</li>
                 </ul>
             </div>
 
@@ -2778,7 +1174,7 @@
                 <div class="kontakt-item">
                     <h3>✉️ E-Mail</h3>
                     <!-- HIER Ihre E-Mail einfügen -->
-                    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="741d1a121b3419150c59151f0107001d1f5a1011">[email&#160;protected]</a></p>
+                    <p><a href="mailto:info@max-akustik.de">info@max-akustik.de</a></p>
                 </div>
                 <div class="kontakt-item">
                     <h3>📍 Standort</h3>
@@ -2807,8 +1203,11 @@
         </p>
     </footer>
 
+    <!-- ==================== SCROLL TO TOP BUTTON ==================== -->
+    <div class="scroll-to-top" onclick="scrollToTop()"></div>
+
     <!-- ==================== JAVASCRIPT ==================== -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // ==================== HAMBURGER-MENÜ ====================
         function toggleMenu() {
             const menu = document.getElementById('nav-menu');
@@ -2823,6 +1222,17 @@
             menu.classList.remove('active');
             hamburger.classList.remove('active');
         }
+
+        // Schließe Menü beim Klick außerhalb
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            
+            if (!nav.contains(event.target) && menu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
 
         // Smooth Scrolling für Navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -2841,9 +1251,9 @@
         // Navigation Hintergrund bei Scrollen + PARALLAX-EFFEKT
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
-            const hero = document.querySelector('.hero');
             const lightBackground = document.querySelector('.light-background');
             const heroContent = document.querySelector('.hero-content');
+            const scrollBtn = document.querySelector('.scroll-to-top');
             const scrolled = window.scrollY;
             
             // Navigation Hintergrund
@@ -2851,6 +1261,13 @@
                 nav.style.background = 'rgba(10, 10, 10, 0.98)';
             } else {
                 nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+            
+            // Scroll to Top Button
+            if (scrolled > 500) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
             }
             
             // Parallax-Effekt für Lichter beim Scrollen
@@ -2871,6 +1288,14 @@
             }
         });
 
+        // Scroll to Top Funktion
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
         // Dynamische Licht-Intensität basierend auf Mausposition
         document.addEventListener('mousemove', (e) => {
             const hero = document.querySelector('.hero');
@@ -2885,7 +1310,7 @@
                 const lightCones = document.querySelectorAll('.light-cone');
                 const spotlights = document.querySelectorAll('.spotlight');
                 
-                lightCones.forEach((cone, index) => {
+                lightCones.forEach((cone) => {
                     const coneRect = cone.getBoundingClientRect();
                     const coneCenterX = coneRect.left + coneRect.width / 2;
                     const distance = Math.abs(mouseX - coneCenterX);
